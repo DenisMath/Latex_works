@@ -143,13 +143,9 @@ ELSEIF $B = 0 $
 
 ELSE 
 
-\hspace{5em}IF $A>0$  
+\hspace{5em}IF $A \neq 0$  
 
-\hspace{10em}  $MAX = \sqrt{ F(\pi )} $
-
-\hspace{5em} ELSEIF $A<0$
-
-\hspace{10em} $MAX = \sqrt{ F(\frac{\pi}{2} )} $
+\hspace{10em} $MAX = \sqrt{ F(\frac{\pi}{2}+\frac{1}{2}\arctg(\frac{B}{A}) )} $
 
 \hspace{5em} ELSE 
 
