@@ -1,0 +1,84 @@
+\documentclass[a4paper,11pt]{article}
+
+\usepackage[T2A]{fontenc}
+\usepackage[cp1251]{inputenc}
+\usepackage[ukrainian,english]{babel}
+\usepackage{amssymb,upref}
+\usepackage{amsmath,amsthm}
+\usepackage{multicol}
+\usepackage{geometry}
+\usepackage[dvips]{graphicx}
+\geometry{hmargin={2.0cm,2.0cm},vmargin={2.5cm,2.5cm},headheight=24pt}%
+\usepackage{fancyhdr}
+\pagestyle{fancy}%
+\lhead{\footnotesize\itshape Вісник Київського університету\\Серія: фізико-математичні науки}%
+\chead{\footnotesize\bfseries 2012, 2\\}%
+\rhead{\footnotesize\itshape Bulletin of University of Kyiv\\Series: Physics {\slshape\&} Mathematics}%
+\renewcommand{\headrulewidth}{0pt}
+\lfoot{}\cfoot{}\rfoot{}%
+\fancypagestyle{plain}{%
+\lfoot{\footnotesize \copyright\ D.I.~Morozov, 2012}%
+}
+
+\setlength{\parindent}{7mm}
+
+\makeatletter
+\renewcommand\section{\@startsection {section}{1}{\z@}%
+                                   {-3.5ex \@plus -1ex \@minus -.2ex}%
+                                   {2.3ex \@plus.2ex}%
+                                   {\normalfont\bfseries}}
+\def\@biblabel#1{#1.}
+\makeatother
+
+\theoremstyle{plain}
+\newtheorem{thm}{Теорема}[section]
+\newtheorem{lemma}{Лема}
+\newtheorem{proposition}{Proposition}
+\newtheorem{cor}{Наслідок}
+\newtheorem{rem}{Зауваження}
+\newtheorem*{proo}{Доведення}
+\newtheoremstyle{definition}
+  {}
+  {}
+  {}
+  {}
+  {\itshape}
+  {.}
+  {.5em}
+  {}
+\theoremstyle{definition}
+\newtheorem{defi}{Означення}[section]
+\newtheorem{ex}{Приклад}
+
+\newcommand{\sub}{Sub_\varphi(\Omega)}
+\newcommand{\SSub}{\mathrm{SSub}}
+
+\newcommand{\E}{\textsf E}
+\newcommand{\R}{\mathbb{R}}
+\renewcommand{\P}{\mathbf{P}}
+\newcommand{\pr}{\mathbf{P}}
+
+\newcommand{\N}{\textit{\textsf{N}}}
+\renewcommand{\H}{\textit{\textsf{H}}}
+\renewcommand{\d}{\,\mathrm{d}}
+
+\newcommand{\Aut}{\operatorname{Aut}}
+\newcommand{\Wr}{\mathop{\font\xx=cmsy10 at 18pt \hbox{\xx \char111}}}
+
+\newcommand{\uu}{\mathrm{u}}
+%\let\subgroupeq\leqslant
+%\let\supgroupeq\geqslant
+%\DeclareMathOperator*{\X}{\times}
+
+\let\le\leqslant
+\let\leq\leqslant
+\let\ge\geqslant
+\let\geq\geqslant
+
+\def\labelenumi{\theenumi)}
+
+
+\begin{document}
+\thispagestyle{plain}
+
+\end{document}
