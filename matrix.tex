@@ -115,9 +115,13 @@ IF $B > 0 $
 
 
 
-\hspace{5em}IF $A \neq 0 $
+\hspace{5em}IF $A > 0 $
 
 \hspace{10em} $MAX = \sqrt{ F(\frac{1}{2}\arctg \frac{B}{A})} = \sqrt{ F( \frac{1}{2}\arctg \frac{2(a_{11}^{}a_{12}^{} + a_{21}^{}a_{22}^{})}{ (a_{11}^2 + a_{21}^2) - (a_{12}^2 + a_{22}^2) })}$
+
+\hspace{5em}ELSE IF $A < 0 $
+
+\hspace{10em} $MAX = \sqrt{ F(\frac{\pi}{4}+\frac{1}{2}\arctg \frac{A}{B})}$
 
 \hspace{5em}ELSE
 
@@ -143,9 +147,13 @@ ELSEIF $B = 0 $
 
 ELSE 
 
-\hspace{5em}IF $A \neq 0$  
+\hspace{5em}IF $A < 0$  
 
 \hspace{10em} $MAX = \sqrt{ F(\frac{\pi}{2}+\frac{1}{2}\arctg(\frac{B}{A}) )} $
+
+\hspace{5em}ELSE IF $A > 0 $
+
+\hspace{10em} $MAX = \sqrt{ F(\frac{\pi}{4}-\frac{1}{2}\arctg \frac{A}{B})}$
 
 \hspace{5em} ELSE 
 
