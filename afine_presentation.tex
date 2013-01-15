@@ -3,78 +3,43 @@
 \usepackage[cp1251]{inputenc}
 \usepackage[english,russian]{babel}
 \usepackage{xcolor}
-\usetheme{Goettingen}
-%\usetheme{Warsaw}
+%\usetheme{Goettingen}
+\usetheme{Warsaw}
 %\usecolortheme{beetle}
-\setbeamercovered{transparent}
-\usebackgroundtemplate{\includegraphics[width=\paperwidth,height=\paperheight]{background3.jpg}}
+%\setbeamercovered{transparent}
+\setbeamertemplate{blocks}[rounded]% [shadow=false]
+\usebackgroundtemplate{\includegraphics[width=\paperwidth,height=\paperheight]{uzor1.jpg}}
 % а тут началась презентация
 
-\title{Второй закон Ньютона}
-\author{Иванов П.И.}
-\institute{Институт разных исследований (ИРИ НАН Украины)}
+\title{Графический редактор}
+\author{Денис Морозов}
+\institute{Samsung R&D}
 \date{\today}
 
+%\setbeamercolor{color1}{fg = white}
+%\setbeamercolor{block title}{bg=red!30,fg=black}
+%\setbeamercolor{block body}{bg=red!30,fg=blue}
+
 \begin{document}
-
-% выводим заглавие
-\begin{frame}
-\transdissolve[duration=0.2]
-\titlepage
-\end{frame}
-
-\section*{План презентации}
-
-% выводим оглавление
-\usebackgroundtemplate{\includegraphics[width=\paperwidth,height=\paperheight]{background1.jpg}}
-\begin{frame}
-\transdissolve[duration=0.2]
-\frametitle{Содержание}
-\tableofcontents[pausesections]
-\end{frame}
-
-\section{Второй закон Ньютона}
-\subsection{Математическая формулировка}
-
-\begin{frame}{формулы 1}
-\frametitle{Для школьников}
-Для школьников второй закон Ньютона записывают в следующем виде:
-\begin{equation}
-m\mathbf{a}=\mathbf{F}
-\end{equation}
+\begin{frame}{New frame}
+text
+{\usebeamercolor[fg]{structure} text}
+\begin{block}{Color}
+Text in frame
+\end{block}
 \pause
-Где $m$ - масса тела, $\mathbf{a}$ - ускорение тела, $\mathbf{F}$ - сила, действующая на тело
+
+\setbeamercolor{block body}{bg=black}
+\begin{block}{Color}
+\center{\includegraphics[width=7cm,height=4cm]{uzor1.jpg}}
+\end{block}
+\setbeamercolor{block body}{bg = block body.bg}
+\begin{block}{Color}
+Text in frame
+\end{block}
+
+
+
 \end{frame}
-
-\begin{frame}{формулы 2}
-\frametitle{Для продвинутых школьников}
-Для продвинутых школьников, которые знакомы с дифференциальным исчислением, второй закон Ньютона записывают в виде:
-\begin{equation}
-\dfrac{d\mathbf{p}}{dt}=\mathbf{F}
-\end{equation}
-\pause
-Где $p$ - импульс тела, $t$ - время
-\end{frame}
-
-\begin{frame}{формулы 3}
-\frametitle{Для студентов}
-Для студентов, которые изучают теоретическую механику, второй закон Ньютона записывают в виде уравнения Лагранжа:
-\begin{equation}
-\dfrac{d}{dt}\dfrac{\partial L}{\partial\dot q_i}=\dfrac{\partial L}{\partial q_i}
-\end{equation}
-\pause
-Где $L$ - функция Лагранжа механической системы, $q_i$ - i-тая обобщенная координата.
-\end{frame}
-
-\section{Применения}
-\subsection{Примеры}
-
-\begin{frame}{формулы 3}
-\frametitle{отмазка}
-Применения второго закона Ньютона настолько обширны, что в рамках данного доклада рассказать о них не представляется возможным.
-\pause
-Спасибо за внимание!
-\end{frame}
-
 \end{document}
 
