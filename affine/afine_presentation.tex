@@ -1,0 +1,295 @@
+% преамбула документа
+\documentclass[fullscreen=true, bookmarks=false]{beamer}
+\usepackage[cp1251]{inputenc}
+\usepackage[english,russian]{babel}
+\usepackage{xcolor}
+\usepackage{wrapfig}
+%\usetheme{Goettingen}
+\usetheme{Warsaw}
+%\usecolortheme{beetle}
+%\setbeamercovered{transparent}
+%\setbeamertemplate{blocks}[rounded]% [shadow=false]
+%\setbeamertemplate{frames}[shadow=false]
+
+%\usebackgroundtemplate{\includegraphics[width=\paperwidth,height=\paperheight,  keepaspectratio]{beamer1_biw.PNG}}
+% а тут началась презентация
+% \usebackgroundtemplate{\centering
+%         \includegraphics[height=7cm, keepaspectratio]{beamer1_biw.PNG}}
+
+%\addtobeamertemplate{frame begin}{\pgfsetfillopacity{0.7}}{\pgfsetfillopacity{1}}
+%\addtobeamertemplate{block begin}{\pgfsetfillopacity{0.7}}{\pgfsetfillopacity{1}}
+\title{Самоаффинные плитки}
+\subtitle{Использование самоаффинных плиток для генерации сложных изображений}
+\author{Денис Морозов}
+\institute{Samsung R\&D}
+\date{\today}
+
+%\setbeamercolor{color1}{fg = white}
+%\setbeamercolor{block title}{bg=red!30,fg=black}
+%\setbeamercolor{block body}{bg=red!30,fg=blue}
+
+\begin{document}
+
+\begin{frame}
+\titlepage
+\end{frame}
+
+\begin{frame}
+\centering \hspace{4em}\includegraphics[width=20em, keepaspectratio]{beamer1_biw.PNG}
+\end{frame}
+
+\begin{frame}{Использование самоаффинных плиток для генерации сложных изображений}
+%\hspace{10em}\includegraphics[width=8em, keepaspectratio]{beamer1_biw.PNG}
+%\begin{block}{Color}
+\vspace{0ex}
+\parbox{18em}{
+\hspace{1em} Представление сложных изображений растровыми образами имеет ряд существенных недостатков,
+ а именно - невозможность масштабирования без потери качества и большой размер минимального описания рисунка.
+}\hspace{0cm}
+\raisebox{-7ex}{
+\includegraphics[width=9em, keepaspectratio]{beamer15_biw.PNG}
+}
+\pause
+\raisebox{-7ex}{
+\includegraphics[width=9em, keepaspectratio]{beamer33_biw.PNG}
+}
+\parbox{18em}{
+\hspace{1em}Использование самоаффинных плиток для генерации изображений позволяет решить данные проблемы.
+ Кроме того, предложенная схема обладает алгоритмическим ресурсом для распараллеливания при построении изображения.
+% и при построении изображения данным методом возможно эффективное использование многопроцессорных и могоядерных систем.
+}
+
+\vspace{.5ex}
+% Является очевидной сложность данного рисунка. Однако для его создание необходимо лишь несколько параметров. К сожалению поведение самоподобной структуры довольно непредсказуемо. Однако эмпирические наблюдения позволяет сделать прогноз.
+% Является очевидной сложность данного рисунка. 
+\vspace{1ex}
+%}
+
+%\end{block}
+
+\end{frame}
+
+\begin{frame}{Преимущества}
+%\pause
+\setbeamercolor{block body}{bg=black, fg=white}
+\begin{block}{Произвольная степень детализации}
+\vspace{1ex}
+\hspace{1em}\parbox{21em}{
+Так же, как и в векторной графике, рисунок задается не растровым образом, а математическим описанием, следовательно можно получить изображение необходимого качества при любом разрешении экрана.
+}\hspace{.5em}
+\raisebox{-5ex}{
+\includegraphics[width=5em, keepaspectratio]{beamer_uzor__rb.PNG}
+}
+\vspace{1ex}
+%}
+
+\end{block}
+\pause
+\begin{block}{Компактность}
+\vspace{1ex}
+\hspace{1em}\parbox{21em}{
+Полное описание рисунка занимает всего несколько десятков байт. 
+}\hspace{.5em}
+\raisebox{-4ex}{
+\includegraphics[width=5em, keepaspectratio]{beamer_elka3.PNG}
+}
+\vspace{0ex}
+%}
+
+\end{block}
+
+\end{frame}
+
+
+\begin{frame}{Преимущества}
+%\pause
+\setbeamercolor{block body}{bg=black, fg=white}
+\begin{block}{Разнообразие}
+\vspace{1ex}
+\hspace{1em}\parbox{20em}{
+Разнообразие изображений, генерируемых с помощью самоаффинных плиток, гарантируется сложностью задачи об сопряженности двух наборов матриц.
+}\hspace{.1em}
+\raisebox{-5ex}{
+\includegraphics[width=6em, keepaspectratio]{beamer10_rb.PNG}
+}
+\vspace{1ex}
+%}
+
+\end{block}
+\pause
+\setbeamercolor{block body}{bg=black, fg=white}
+\begin{block}{Распараллеливание}
+\vspace{1ex}
+\hspace{1em}\parbox{20.5em}{
+ При построении изображения данным методом возможно эффективное использование многопроцессорных и много-ядерных систем.
+}\hspace{.0em}
+\raisebox{-5.8ex}{
+\includegraphics[width=6em, keepaspectratio]{beamer7_rb.PNG}
+}
+\vspace{0ex}
+%}
+
+\end{block}
+
+\end{frame}
+
+\begin{frame}{Проблематика}
+%\pause
+\setbeamercolor{block body}{bg=black, fg=white}
+\begin{block}{Скорость построения изображения}
+\vspace{1ex}
+\hspace{1em}\parbox{21em}{
+С каждой итерацией число точек изображения растет экспоненциально. Поэтому с увеличением степени детализации время построение изображения значительно увеличивается.
+}\hspace{.0em}
+\raisebox{-3ex}{
+\includegraphics[width=5em, keepaspectratio]{beamer9_bib.PNG}
+}
+\vspace{1ex}
+%}
+
+\end{block}
+\pause
+\begin{block}{Решение}
+\vspace{1ex}
+\hspace{1em}\parbox{21em}{
+Использование многопроцессорных или много-ядерных систем для вычисления точек изображения. Кроме того использовать фильтрацию точек в процессе вычисления.
+}\hspace{.2em}
+\raisebox{-3ex}{
+\includegraphics[width=5em, keepaspectratio]{beamer8_rb.PNG}
+}
+\vspace{0ex}
+%}
+
+\end{block}
+
+\end{frame}
+
+\begin{frame}{Проблематика}
+%\pause
+\setbeamercolor{block body}{bg=black, fg=white}
+\begin{block}{Хаотичность}
+\vspace{1ex}
+\hspace{1em}\parbox{21em}{
+Небольшие изменения порождающих параметров могут привести к значительным изменениям изображения. Как следствие, сложно построить изображение с наперед заданными свойствами.
+}\hspace{.0em}
+\raisebox{-5ex}{
+\includegraphics[width=5em, keepaspectratio]{beamer6_bib.PNG}
+}
+\vspace{1ex}
+%}
+
+\end{block}
+\pause
+\begin{block}{Решение}
+\vspace{1ex}
+\hspace{1em}\parbox{21em}{
+Создание библиотеки шаблонов изображений с заданными характеристиками. Изучение влияния параметров, используемых при построении, на форму изображения.
+}\hspace{.2em}
+\raisebox{-5ex}{
+\includegraphics[width=5em, keepaspectratio]{beamer5_rb.PNG}
+}
+\vspace{0ex}
+%}
+
+\end{block}
+   
+\end{frame}
+
+\begin{frame}{Возможные применения}
+%\pause
+\setbeamercolor{block body}{bg=black, fg=white}
+\begin{block}{Screensaver}
+\vspace{1ex}
+\hspace{1em}\parbox{20em}{
+Генерация заставок для мобильных устройств и ПК. Пользователю предоставляется возможность самому создать оригинальную заставку.
+}\hspace{.3em}
+\raisebox{-5ex}{
+\includegraphics[width=6em, keepaspectratio]{beamer3_gb.PNG}
+}
+\vspace{1ex}
+%}
+
+\end{block}
+\pause
+\begin{block}{Графический формат}
+\vspace{1ex}
+\hspace{1em}\parbox{21em}{
+Создание сложных изображений, состоящих из объединения нескольких самоаффинных плиток.
+ Полученное таким образом изображение может быть полностью описано в компактном виде. 
+}\hspace{.2em}
+\raisebox{-5ex}{
+\includegraphics[width=5em, keepaspectratio]{beamer1_gb.PNG}
+}
+\vspace{0ex}
+%}
+
+\end{block}
+   
+\end{frame}
+
+\begin{frame}{Возможные применения}
+%\pause
+\setbeamercolor{block body}{bg=black, fg=white}
+\begin{block}{Изучение линейной динамики}
+\vspace{1ex}
+\hspace{1em}\parbox{21em}{
+Изучение полугрупп, порожденных системами линейных сжимающих отображений.  
+}\hspace{.2em}
+\raisebox{-7ex}{
+\includegraphics[width=5em, keepaspectratio]{figures_rb1.PNG}
+}
+\vspace{0ex}
+%}
+
+\end{block}
+\pause
+\begin{block}{Генерация текстур}
+\vspace{1ex}
+\hspace{1em}\parbox{21em}{
+Генерация сложных текстур, иммитирующих поверхности различного типа.
+}\hspace{.3em}
+\raisebox{-4ex}{
+\includegraphics[width=5em, keepaspectratio]{textures_mini2_rb.PNG}
+}
+\vspace{1ex}
+%}
+
+\end{block}
+
+
+   
+\end{frame}
+
+% \begin{frame}{New frame}
+% text
+% {\usebeamercolor[fg]{structure} text}
+% \begin{block}{Color}
+% Text in frame
+% \end{block}
+% \end{frame}
+% \setbeamercolor{block body}{bg=black, fg=white}
+
+
+\begin{frame}{Прототип}
+Прототип\footnote{Все изображения самоаффинных плиток, использованные в презентации, созданы при помощи прототипа.} генератора самоаффинных плиток\footnote{В процессе создания презентации ни одно животное не пострадало}:
+\centering \hspace{0em}\includegraphics[width=26em, keepaspectratio]{beamer_tree.PNG}
+\end{frame}
+
+
+\begin{frame}{Примеры самоаффинных плиток}
+
+%{\usebeamercolor[fg]{structure} text}
+% \begin{block}{Color}
+% Text in frame
+% \end{block}
+
+\setbeamercolor{block body}{bg=black, fg=white}
+\begin{block}{2-х и 3-х точечные плитки}
+%\hspace{20em}
+\center{\hspace{10em}\includegraphics[height=35.5ex, keepaspectratio]{figures_fb.PNG}}
+\end{block}
+
+\end{frame}
+
+\end{document}
+
