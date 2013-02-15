@@ -1,0 +1,531 @@
+% $Header: /Users/joseph/Library/texmf/tex/latex/beamer/solutions/conference-talks/conference-ornate-20min.en.tex,v 90e850259b8b 2007/01/28 20:48:30 tantau $
+
+\documentclass[pdf, unicode, 9pt]{beamer}
+
+% This file is a solution template for:
+
+% - Talk at a conference/colloquium.
+% - Talk length is about 20min.
+% - Style is ornate.
+
+
+
+% Copyright 2004 by Till Tantau <tantau@users.sourceforge.net>.
+%
+% In principle, this file can be redistributed and/or modified under
+% the terms of the GNU Public License, version 2.
+%
+% However, this file is supposed to be a template to be modified
+% for your own needs. For this reason, if you use this file as a
+% template and not specifically distribute it as part of a another
+% package/program, I grant the extra permission to freely copy and
+% modify this file as you see fit and even to delete this copyright
+% notice. 
+
+
+\mode<presentation>
+{
+  %\usetheme{CambridgeUS}
+%\usetheme{Bergen}
+%\usetheme{PaloAlto}
+%\usetheme{Warsaw}
+%\usetheme{Berkeley}
+\usetheme{Rochester}
+%\usetheme{Goettingen}
+  % or ...
+\usecolortheme{beetle}
+  \setbeamercovered{transparent}
+  % or whatever (possibly just delete it)
+}
+
+\usepackage[cp1251]{inputenc}
+\usepackage[english,russian]{babel}
+\usepackage{tabularx}
+\usepackage{tikz}
+%\usepackage[a4paper,margin=1cm,landscape]{geometry}
+\usetikzlibrary{positioning,shapes,shadows,arrows}
+\usetikzlibrary{mindmap,trees}
+% or whatever
+
+
+
+\usepackage{times}
+\usepackage[T1]{fontenc}
+% Or whatever. Note that the encoding and the font should match. If T1
+% does not look nice, try deleting the line with the fontenc.
+%\usepackage{geometry} % to change the page dimensions
+\usepackage{graphicx} % support the \includegraphics command and options
+\usepackage{ifpdf}
+\ifpdf
+\DeclareGraphicsRule{*}{mps}{*}{}
+\fi
+%\usepackage{pst-plot,pstricks-add}
+%\usepackage[latin1]{inputenc}
+\usetikzlibrary[topaths]
+% A counter, since TikZ is not clever enough (yet) to handle
+% arbitrary angle systems.
+\newcount\mycount
+
+\usepackage{verbatim}
+\usetikzlibrary{arrows,shapes}
+
+
+\title[Параллельные архитектуры и алгоритмы] % (optional, use only with long paper titles)
+{Параллельные архитектуры и алгоритмы}                       
+\subtitle
+{Презентация}
+
+
+\author[Денис Морозов] % (optional, use only with lots of authors)
+{Денис Морозов  \\  \texttt{morozov.den@samsung.com}}
+% - Give the names in the same order as the appear in the paper.
+% - Use the \inst{?} command only if the authors have different
+%   affiliation.
+\institute[Samsung R\&D] % (optional, but mostly needed)
+{
+  \inst{1}%
+  Mobile Lab 2\\
+  Samsung R\&D
+  \and
+  \inst{2}%
+  Department of Computer Science, doctoral studies\\
+  University of "Kiev-Mogyla Academy"}
+%  \and
+% \vspace{.5cm}
+ % \inst{3}%
+  % \texttt{ formulation of the problem}
+
+  %  \texttt{Valentin Vovk},  \texttt{ Mobile Lab 2}}
+% - Use the \inst command only if there are several affiliations.
+% - Keep it simple, no one is interested in your street address.
+
+\date[] % (optional, should be abbreviation of conference name)
+{Январь, 2012}
+% - Either use conference name or its abbreviation.
+% - Not really informative to the audience, more for people (including
+%   yourself) who are reading the slides online
+
+\subject{Theoretical-number methods for calculation of convolution }
+% This is only inserted into the PDF information catalog. Can be left
+% out. 
+
+\AtBeginSubsection[]
+{
+  \begin{frame}<beamer>{План}
+    \tableofcontents[currentsection,currentsubsection]
+  \end{frame}
+}
+
+
+% If you wish to uncover everything in a step-wise fashion, uncomment
+% the following command: 
+
+%\beamerdefaultoverlayspecification{<+->}
+
+
+\begin{document}
+
+\begin{frame}
+  \titlepage
+\end{frame}
+
+\begin{frame}{План}
+  \tableofcontents
+  % You might wish to add the option [pausesections]
+\end{frame}
+
+
+% Structuring a talk is a difficult task and the following structure
+% may not be suitable. Here are some rules that apply for this
+% solution: 
+
+% - Exactly two or three sections (other than the summary).
+% - At *most* three subsections per section.
+% - Talk about 30s to 2min per frame. So there should be between about
+%   15 and 30 frames, all told.
+
+% - A conference audience is likely to know very little of what you
+%   are going to talk about. So *simplify*!
+% - In a 20min talk, getting the main ideas across is hard
+%   enough. Leave out details, even if it means being less precise than
+%   you think necessary.
+% - If you omit details that are vital to the proof/implementation,
+%   just say so once. Everybody will be happy with that.
+
+
+\section{Параллельные архитектуры}
+%\subsection{Параллельные архитектуры}
+
+\begin{frame}{Классификация Флинна}
+  % - A title should summarize the slide in an understandable fashion
+  %   for anyone how does not follow everything on the slide itself.
+
+Классификация архитектур, основанная на рассмотрении числа потоков инструкций и потоков данных
+  \begin{itemize}
+  %\pause
+  \item
+    SISD - Single Instruction stream over a Single Data stream
+     
+  %\pause
+  \item
+    SIMD - Single Instruction Multiple Data  
+%\pause
+ \item
+    MISD - Multiple Instruction Single Data   
+%\pause
+ \item
+    MIMD - Multiple Instruction Multiple Data   
+
+  
+  \end{itemize}
+
+
+\end{frame}
+
+\begin{frame}{SMP (symmetric multiprocessing)}
+SMP (symmetric multiprocessing) - симметричная многопроцессорная архитектура. Главной особенностью систем с архитектурой SMP является наличие общей физической памяти, разделяемой всеми процессорами.
+
+При работе с SMP-системами используют так называемую парадигму программирования с разделяемой памятью - shared memory paradigm (OpenMP).
+
+ \begin{center}
+ \includegraphics[scale=0.7]{new.3}  
+ \end{center}
+
+\end{frame}
+
+\begin{frame}{SMP }
+ Возможны конфликты при обращении к общей памяти
+  \begin{itemize}
+
+  \item
+CREW
+ \item
+СRСW
+  
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{MPP (massive parallel processing)}
+MPP (massive parallel processing) - массивно-параллельная архитектура. Главная особенность такой архитектуры состоит в том, что память физически разделена.
+При работе с MPP-системами используют  Massive Passing Programming Paradigm - парадигму программирования с передачей данных (MPI, PVM, BSPlib)
+
+\vskip .7cm
+\begin{center}
+ \includegraphics[scale=0.7]{new.4}  
+ \end{center}
+
+\end{frame}
+\begin{frame}{Гибридная архитектура NUMA}
+Главная особенность гибридной архитектуры NUMA (nonuniform memory access) - неоднородный доступ к памяти.
+Архитектура cc-NUMA (Cache Coherent Non-Uniform Memory Access) - неоднородный доступ к памяти с обеспечением когерентности кэшей.
+
+\vskip .5cm
+\begin{center}
+ \includegraphics[scale=0.7]{new.5}  
+ \end{center}
+\end{frame}
+
+\begin{frame}{Конвейерные процессоры}
+
+ \begin{enumerate}
+ \item 
+ выборка команды;
+ \item 
+
+    расшифровка команды;
+  \item 
+    выборка необходимых операндов;
+  \item 
+    выполнение команды;
+  \item 
+    сохранение результатов.
+ \end{enumerate}
+
+ 
+ \begin{center}
+ \includegraphics[scale=0.57]{new.1}  
+ \end{center}
+
+
+\end{frame}
+\begin{frame}{Матричные процессоры}
+Наиболее распространенными из систем класса один поток команд - множество потоков данных (SIMD) являются матричные системы, которые лучше всего приспособлены для решения задач, характеризующихся параллелизмом независимых объектов или данных.
+
+Моделью параллельных вычислений на матричных(векторных) ВС являются клеточные автоматы.
+\end{frame}
+\begin{frame}{Процессоры баз данных}
+ Создание такого рода систем связывается с реализацией параллелизма при выполнении последовательности операций и транзакций, а также конвейерной потоковой обработки данных.
+\end{frame}
+
+\begin{frame}{Кластеры}
+Кластер представляет собой два или более компьютеров (часто называемых узлами), объединяемых при помощи сетевых технологий на базе шинной архитектуры или коммутатора и предстающих перед пользователями в качестве единого информационно-вычислительного ресурса.
+
+Важна топология связи процессоров в кластерной системе.
+\begin{center}
+  
+\includegraphics[scale = 2.0]{new.2}
+\end{center}
+\end{frame}
+\section{Параллельные алгоритмы}
+\begin{frame}{Закон Амдала}
+Самое важное в вопросе эффективности параллельного кода - это хороший дизайн самого алгоритма.
+$$S(p) = \frac{t_s}{ft_s + (1-f)t_s/p}=\frac{p}{1+(p-1)f}$$
+\end{frame}
+
+\begin{frame}{Примеры алгоритмов}
+  % - A title should summarize the slide in an understandable fashion
+  %   for anyone how does not follow everything on the slide itself.
+
+
+  \begin{itemize}
+  %\pause
+  \item
+      алгоритм  сложения сдваиванием
+  %\pause
+  \item
+     скалярное произведение векторов
+%\pause
+ \item
+     умножение матрицы на вектор
+%\pause
+ \item
+     умножение матриц
+%\pause
+ \item
+    алгоритм параллельной сортировки Бэтчера 
+%\pause
+ \item
+    нахождение решения уравнений в конечных разностях
+%\pause
+ \item
+    свертка с большим ядром над полем комплексных чисел
+  \end{itemize}
+
+
+\end{frame}
+\begin{frame}{Сложение сдваиванием}
+  \tikzstyle{abstract}=[rectangle, draw=black, rounded corners, fill=blue!40, drop shadow,
+        text centered, anchor=north, text=white, text width=3cm]
+\tikzstyle{comment}=[rectangle, draw=black, rounded corners, fill=green, drop shadow,
+        text centered, anchor=north, text=white, text width=3cm]
+\tikzstyle{myarrow}=[->, >=open triangle 90, thick]
+\tikzstyle{line}=[-, thick]
+\begin{center}
+  
+
+\scalebox{.5}
+{
+\begin{tikzpicture}[node distance=2cm]
+    \node (Item) [abstract, rectangle split, rectangle split parts=2]
+        {
+            \textbf{SUM}
+            \nodepart{second}$a_1+a_2+a_3+a_4+a_5+a_6+a_7+a_8$
+        };
+    \node (AuxNode01) [text width=4cm, below=of Item] {};
+    \node (Component) [abstract, rectangle split, rectangle split parts=2, left=of AuxNode01]
+        {
+            \textbf{$SUM_{12}$}
+            \nodepart{second}$a_1+a_2+a_3+a_4$
+        };
+
+    \node (System) [abstract, rectangle split, rectangle split parts=2, right=of AuxNode01]
+        {
+            \textbf{$SUM_{34}$}
+            \nodepart{second}$a_5+a_6+a_7+a_8$
+        };
+    \node (AuxNode02) [text width=0.5cm, below=of Component] {};
+    \node (Sensor) [abstract, rectangle split, rectangle split parts=2, left=of AuxNode02]
+        {
+            \textbf{$SUM_1$}
+            \nodepart{second}$a_1+a_2$
+        };
+    \node (Part) [abstract, rectangle split, rectangle split parts=2, right=of AuxNode02]
+        {
+            \textbf{$SUM_2$}
+            \nodepart{second}$a_3+a_4$
+        };
+\node (AuxNode03) [text width=0.5cm, below=of System] {};
+ \node (Sensor1) [abstract, rectangle split, rectangle split parts=2, left=of AuxNode03]
+        {
+            \textbf{$SUM_3$}
+            \nodepart{second}$a_5+a_6$
+        };
+    \node (Part1) [abstract, rectangle split, rectangle split parts=2, right=of AuxNode03]
+        {
+            \textbf{$SUM_4$}
+            \nodepart{second}$a_7+a_8$
+        };
+        
+   
+    
+    \draw[myarrow] (Component.north) -- ++(0,0.8) -| (Item.south);
+    \draw[line] (Component.north) -- ++(0,0.8) -| (System.north);
+    
+    \draw[myarrow] (Sensor.north) -- ++(0,0.8) -| (Component.south);
+    \draw[line] (Sensor.north) -- ++(0,0.8) -| (Part.north);
+
+ \draw[myarrow] (Sensor1.north) -- ++(0,0.8) -| (System.south);
+    \draw[line] (Sensor1.north) -- ++(0,0.8) -| (Part1.north);
+    
+   
+        
+        
+\end{tikzpicture}
+}
+\end{center}
+\end{frame}
+\begin{frame}{Алгоритм Бэтчера}{Определение}
+  % - A title should summarize the slide in an understandable fashion
+  %   for anyone how does not follow everything on the slide itself.
+
+\begin{enumerate}
+% \begin{itemize}
+%\pause
+\item
+   начальная установка p . Установить $p\leftarrow 2^{t-1}$ , где $t=log_2N$ - наименьшее целое число, такое, что $2^t=N$ . (Шаги 2-5 будут выполняться с $p=2^{t-1},2^{t-2},...,1$ .)
+%\pause
+\item
+   начальная установка $q,r,d$ . Установить $q\leftarrow2^{t-1},r\leftarrow 0, d \leftarrow p$ .
+%\pause
+\item
+ цикл по $i$ . Для всех $t$ , таких, что $0\leq i<N-d$ и $i\wedge p = r $  , выполнять шаг 4.
+
+Затем перейти к шагу 5.
+%\pause
+\item
+
+ Сравнение/обмен $0 \leq i< N-d, K_{i+1}\leftrightarrow K_{i+d+1}$
+%\pause
+\item
+ Цикл по $q$ . Если $q\neq p$ , установить $d\leftarrow q-p, q \leftarrow q/2, r \leftarrow p$ и возвратиться к шагу 3.
+%\pause
+\item
+ Цикл по $p$.  Установить $p\leftarrow \lfloor p/2 \rfloor$ . Если $p>0$ , возвратиться к шагу 2.
+% \end{itemize}
+\end{enumerate}
+
+\end{frame}
+\begin{frame}{Алгоритм Бэтчера}{Пример}
+
+
+\hspace*{10pt}\begin{tabular}{| c | c | c | c | c | c | c |}
+
+
+\hline
+ p & 4  & 2 & 2 & 1 & 1 & 1 \\
+ q & 4  & 4 & 2 & 4 & 2 & 1 \\
+ r & 0  & 0 & 2 & 0 & 1 & 1 \\
+ d & 4  & 2 & 2 & 1 & 3 & 1 \\
+
+\hline
+\end{tabular}
+
+\begin{enumerate}
+%\pause
+\item $ 1 \leftrightarrow 5 ,2 \leftrightarrow 6 ,3 \leftrightarrow 7 ,4 \leftrightarrow 8$
+%\pause
+\item $ 1 \leftrightarrow 3 ,2 \leftrightarrow 4 ,5 \leftrightarrow 7 ,6 \leftrightarrow 8$
+%\pause
+\item $ 3 \leftrightarrow 5 ,4 \leftrightarrow 6 $
+%\pause
+\item  $ 1 \leftrightarrow 2 ,3 \leftrightarrow 4 ,5 \leftrightarrow 6 ,7\leftrightarrow 8$
+%\pause
+\item $ 2 \leftrightarrow 5 ,4 \leftrightarrow 7 $
+%\pause
+\item $ 2 \leftrightarrow 3 ,4 \leftrightarrow 5 ,6 \leftrightarrow 7$
+\end{enumerate}
+\end{frame}
+\begin{frame}{tikz}
+%\resizebox{10cm}{7cm}
+\scalebox{.5}
+{
+
+  \begin{tikzpicture}
+  \path[mindmap,concept color=black,text=white]
+    node[concept] {Computer Science}
+    [clockwise from=0]
+    child[concept color=green!50!black] {
+      node[concept] {practical}
+      [clockwise from=90]
+      child { node[concept] {algorithms} }
+      child { node[concept] {data structures} }
+      child { node[concept] {pro\-gramming languages} }
+      child { node[concept] {software engineer\-ing} }
+    }  
+    child[concept color=blue] {
+      node[concept] {applied}
+      [clockwise from=-30]
+      child { node[concept] {databases} }
+      child { node[concept] {WWW} }
+    }
+    child[concept color=red] { node[concept] {technical} }
+    child[concept color=orange] { node[concept] {theoretical} };
+\end{tikzpicture}
+}
+\end{frame}
+
+\section{Клеточные автоматы}
+
+\begin{frame}{Разностная схема}
+ Уравнение в конечных разностях:
+$$\frac{\partial^2 f}{\partial x^2}-\frac{\partial f}{\partial y}=0$$
+
+
+\end{frame}
+\begin{frame}{Свертка}
+$$(x^{n_1}+a_{n_1-1}x^{n_1-1}+...+a_0)\cdot(x^{n_2}+b_{n_2-1}x^{n_2-1}+\ldots+b_0)$$
+$$(x^{n_1}+a_{n_1-1}x^{n_1-1}+...+a_0)\cdot(x-x_1)\cdot\ldots\cdot(x-x_{n_2})$$
+
+\end{frame}
+
+% \section*{Основная информация}
+
+% \begin{frame}{Основная информация}
+
+ 
+% \end{frame}
+
+
+
+
+% All of the following is optional and typically not needed. 
+\appendix
+\section<presentation>*{\appendixname}
+\subsection<presentation>*{Литература}
+\begin{frame}[allowframebreaks]
+  \frametitle<presentation>{Литература}
+    
+  \begin{thebibliography}{3}
+    
+  \beamertemplatebookbibitems
+  % Start with overview books.
+%Искусство программирования, том 3. Сортировка и поиск, 2-е издание, Дональд Э. Кнут
+ \bibitem{Knut3}
+   Дональд Э. Кнут
+    \newblock {\em Искусство программирования, том 3. Сортировка и поиск}
+    \newblock Вильямс, 2011
+
+%Т. Тоффоли, Н. Марголус, Машины клеточных автоматов, М.: «Мир», 1991.
+  \bibitem{TofMargKlet1991}
+    Т. Тоффоли, Н. Марголус
+    \newblock {\em  Машины клеточных автоматов }
+    \newblock Мир, 1991.
+ 
+    
+
+  % Followed by interesting articles. Keep the list short. 
+
+  \bibitem{Neiman}
+    Дж.фон Нейман
+    \newblock {\em Теория самовоспроизводящихся автоматов }
+   \newblock Мир, 1971.
+  \beamertemplatearticlebibitems
+ \bibitem{paper1}
+Миронов А.А., Карпов А.Н.
+ \newblock {\em Параллельные алгоритмы обработки данных}
+ \newblock http://www.viva64.com/ru/a/0032/
+  \end{thebibliography}
+\end{frame}
+\end{document}
+
+

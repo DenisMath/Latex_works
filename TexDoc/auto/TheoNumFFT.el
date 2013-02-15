@@ -1,0 +1,36 @@
+(TeX-add-style-hook "TheoNumFFT"
+ (lambda ()
+    (TeX-add-symbols
+     "experiment"
+     "experimentT")
+    (TeX-run-style-hooks
+     "tocloft"
+     "titles"
+     "subfigure"
+     "tocbibind"
+     "nottoc"
+     "notlof"
+     "notlot"
+     "sectsty"
+     "fancyhdr"
+     "subfig"
+     "verbatim"
+     "paralist"
+     "array"
+     "booktabs"
+     "pstricks-add"
+     "pst-plot"
+     "babel"
+     "russian"
+     "fontenc"
+     "T2A"
+     "graphicx"
+     "geometry"
+     "amsmath"
+     "inputenc"
+     "utf8"
+     "latex2e"
+     "art11"
+     "article"
+     "11pt")))
+
