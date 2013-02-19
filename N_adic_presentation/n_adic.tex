@@ -161,8 +161,18 @@
 
 \begin{document}
 
+
 \begin{frame}
   \titlepage
+\end{frame}
+
+\begin{frame}
+\begin{figure}[h]
+\center{\includegraphics[width=11.5em]{fomenko_solenoid.jpg} }
+\caption{A.Fomenko, 2-adic solenoid}
+\label{ris:image}
+\end{figure}
+%\centering \hspace{4em}\includegraphics[width=10em, keepaspectratio]{fomenko_solenoid.jpg}
 \end{frame}
 
 \begin{frame}{Outline}
@@ -188,11 +198,27 @@
 % - If you omit details that are vital to the proof/implementation,
 %   just say so once. Everybody will be happy with that.
 
-\section{Motivation}
+\section{Objective}
 
-\subsection{Objective}
+\subsection{Introduction}
 
-\subsection{Basic Properties}
+\begin{frame}{Introduction}
+N-adic analysis is key to understanding the logic of the processor.  
+\pause
+
+Not having deep understanding of the nature of the essences we work with, we have to strictly follow the rules that guarantee correct work results.
+\pause
+
+ However, the rules limit the range of solvable tasks, while violation of them may lead to an unpredictable result. Yet, such violation might be appropriate, given that we are fully aware of what we are doing.
+\pause
+
+Clear understanding of the nature of a processor's arithmetic is necessary for
+building adequate computational models for problems encountered in the process of software development.
+\end{frame}
+
+%\end{block}
+
+\subsection{Basic properties of ultrametrics}
 
 \begin{frame}{Sufficiency}
   % - A title should summarize the slide in an understandable fashion
@@ -218,231 +244,123 @@ the modern computer is essentially an analog in terms of non Archimedean analysi
 
  2-adic continuity of the basic operations of the processor allows the creation of models that use floating point numbers, and all calculations are made   in the set of integers.
 
- \begin{itemize}
- \pause
-  \item
+ % \begin{itemize}
+ % \pause
+ %  \item
 
- 32 bit integer algorithms have good specifications for optimizing on existing processors
- \item
- \pause
- number-theoretical Fourier transform works well for convolutions with large kernels
-  \end{itemize}
+ % 32 bit integer algorithms have good specifications for optimizing on existing processors
+ % \item
+ % \pause
+ % number-theoretical Fourier transform works well for convolutions with large kernels
+ %  \end{itemize}
 
 \end{frame}
 
-% \begin{frame}{}
 
-%   You can create overlays\dots
- %   \begin{itemize}
-%   \item using the \texttt{pause} command:
+
+
+
+
+\section{Description}
+
+\subsection{Key components of the course}
+
+\begin{frame}{Theory}
+\pause
+\begin{block}{Ultrametrics}
+\pause
+Basic of non Archimedean analysis. Ostrowski theorem.
+
+\end{block}
+\pause
+
+\begin{block}{Izometries}
+\pause
+Izometrical polynomials of the ring $Z_2$. Inductive construction of isometries.
+\end{block}
+\pause
+\begin{block}{Hensel's lemma}
+\pause
+Extend uniquely the root of polynomial in $\mathbb{Z}_p$ to of the root of a polynomial in $Z_p$.
+\end{block}
+
+
+\end{frame}
+
+
+
+\begin{frame}{Practice}
+\pause
+\begin{block}{N-adic Arithmetics}
+\pause
+Basic of arithmetics of the ring $Z_2$ - addition, multiplication, division. 
+
+\end{block}
+\pause
+\begin{block}{Presentation of real numbers in $Z_2$}
+\pause
+Rational numbers in $Z_2$. Some irrationals numbers in $Z_2$.
+\end{block}
+\pause
+\begin{block}{Fast Calculations}
+\pause
+Using of 2-adic arithmetic for providing computational scheme close to the processor architecture.
+
+\end{block}
+
+
+\end{frame}
+\subsection{Possible directions for further study}
+
+\begin{frame}{Applications}
+
+Using techniques discussed in the course is possible to build computational models that are close to the processor architecture.
+\pause
+
+ As a result, these models have good performance characteristics. Moreover we have no calculation errors that appear in the calculation with floating point.
+
+\end{frame}
+
+
+
+\begin{frame}{Next Course}
+
+This course can be used as the basic for the course "Groups' automatous and the automorphisms' group of the regular
+rooted tree "
+
+
+
+
+\end{frame}
+
+% \section*{Summary}
+
+% \begin{frame}{Summary}
+
+%   % Keep the summary *very short*.
+%   \begin{itemize}
+%   % \item
+%   %   The \alert{first main message} of your talk in one or two lines.
+%   \item
+%     In this work implemented a two-dimensional integer convolution
+% %\pause
+%   \item
+%     Possible sizes are - 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024
+%   \end{itemize}
+
+%  \pause 
+%   % The following outlook is optional.
+%   \vskip0pt plus.5fill
+%   \begin{itemize}
+%   \item
+%     Outlook
 %     \begin{itemize}
 %     \item
-%       First item.
-%       \pause
-%     \item    
-%       Second item.
-%     \end{itemize}
-%   \item
-%     using overlay specifications:
-%     \begin{itemize}
-%     \item<3->
-%       First item.
-%     \item<4->
-%       Second item.
-%     \end{itemize}
-%   \item
-%     using the general \texttt{uncover} command:
-%     \begin{itemize}
-%       \uncover<5->{\item
-%         First item.}
-%       \uncover<6->{\item
-%         Second item.}
+% Next task to investigate the possibility of constructing fast two-dimensional convolution for sizes that are not powers of two
+
 %     \end{itemize}
 %   \end{itemize}
 % \end{frame}
-
-
-% \subsection{Previous Work}
-
-% \begin{frame}{The Required Basic Information}{Power of Algebra and Number Theory}
-% We were studied classical works using algebraic methods for calculating the convolution.
-%  Different techniques, including the arithmetic of finite fields, linear algebra and group theory have been used.
-% \pause
-
-
-%  They were adapting to the implementation of algorithms for discrete convolution in C++ language
-%  based processor architecture.
-% \end{frame}
-
-
-
-
-
-\section{Results}
-
-\subsection{Main Results}
-
-\begin{frame}{Main Result}{  \texttt{ formulation of the problem Valentin Vovk},  \texttt{ Mobile Lab 2}}
-Implemented a two-dimensional convolution with algebraic methods for the size of $2^n\times 2^m$
-
-\pause
- \begin{itemize}
- \item 
- $0 \leqslant m,n  \leqslant 10 $.
- \end{itemize}
-
-\end{frame}
-
-
-
-\begin{frame}{Plot Test Results}{   \texttt{tests conducted by Andrei Zavorotny},  \texttt{ Mobile Lab 2}}
-%seen as a convolution made by algebraic methods give better results on large sizes
-As we see algebraic methods for convolution yield the best results on large sizes
-\begin{tikzpicture}
-\draw[very  thick,  <->]  (7,0)  node[below]  {$Size$}
--|  (0,3)  node[above]  {$Time$};
-\draw[red,  thick]  (0,0.0005) -- (1,0.00142) -- (2,0.00513) -- (3,0.02117) -- (4,0.09127) -- (5,0.467)-- (6,2.092)
-node[right]  { over $\mathbb{C}$};
-\draw[blue,  thick]  (0,0.0011) -- (1,0.00261) -- (2,0.01141) -- (3,0.05105) -- (4,0.06112) -- (5,0.506)-- (6,1.402)
-node[right]  { over $GF(2^{16}+1)$};
-% \draw[blue,  thick]  (1.5,4.5)  parabola[bend  at  end]
-% (4.5,1.5)  node[right]  {$D $};
-\draw[dashed]    (6,2.092)  node[left]  {}  -- (6,0)  node[below]  {$2^{10}$}
-
-(5,0.467)  node[left]  {}  -- (5,0)  node[below]  {$2^{9}$}
-(4,0.06112)  node[left]  {}  -- (4,0)  node[below]  {$2^{8}$}
-(3,0.05105)  node[left]  {}  -- (3,0)  node[below]  {$2^{7}$}
-(2,0.01141)  node[left]  {}  -- (2,0)  node[below]  {$2^{6}$}
-;
-% \draw[dashed]    (0,2.2)  node[left]  {$P_2$}  --
-% (3.1,2.2)  (3.1,2.2)  --  (3.1,0)  node[below]  {$Q_2$};
-\end{tikzpicture}
-\end{frame}
-
-\begin{frame}{Test Results}
-  \begin{itemize}
- \item  
- Test results for large sizes
- \end{itemize}
-\pause
-  \hspace*{70pt}
-\begin{tabular}{|c|c|c|c|}
-\hline
- Size  & 1024 & 512 & 256  \\
-\hline
-\hline
- Furie  & 2092 & 467 & 91.27 \\
-\hline
- Ferma  & 1402 & 506 & 61.12 \\
-
-\hline
-\end{tabular}
-
-\end{frame}
-
-\subsection{Basic Ideas for Implementation}
-
-\begin{frame}{Base  Technical Points}
-
- During construction of the algorithm we are
-  \begin{itemize}
-
-\item
- reducing the number of using  modulo field's size
-
-\pause
-\item
- using the FFT algoritm of length 32 based on symmetry of transform matrix
-\pause
-\item
-transition from 64-bit to 32-bit arithmetic
-
-  \end{itemize}
-
-\end{frame}
-
-
-\begin{frame}
-\frametitle{Cooley-Tukey scheme for for FFT}
-
-
-\tikzstyle{format} = [regular polygon,regular polygon sides=9, draw, thin, fill=blue!20]
-%\tikzstyle{format} = [diamond, draw, thin, fill=blue!20]
-\tikzstyle{formatRed} = [ draw, thin, fill=red!20]
-\tikzstyle{mediumGreen} = [ellipse, draw, thin, fill=green!20, minimum height=2.5em]
-\tikzstyle{mediumRed} = [ellipse, draw, thin, fill=red!20, minimum height=2.5em]
-\tikzstyle{mediumOrange} = [ellipse, draw, thin, fill=orange!20, minimum height=2.5em]
- \tikzstyle{ann} = [draw=none,fill=none]
-
-
-\begin{figure}
-\begin{tikzpicture}[node distance=3cm, auto,>=latex', thick]
-    % We need to set at bounding box first. Otherwise the diagram
-    % will change position for each frame.
-    \path[use as bounding box] (-1,0) rectangle (10,-2);
-%nodes
-    \path[->]<2-> node[mediumGreen] (C1024) { 1024 }
-node[format,  right of=C1024] (C32) { 32 }
-node[mediumGreen, below of=C32] (C256) { 256 };
- \path[->]<1-> node[ann] (C1024) { }
- node[format, below of=C1024] (C16) { 16 }
-node[format,  right of=C1024] (C32) { 32 }
-node[format, above  right of=C16] (C4) { 4 }
-node[format, below right of=C32] (C8) { 8 }
-node[ann, right of=C32] (C64) { }
-node[format,  right of=C64] (C2) { 2 };
- \path[->]<3-> node[mediumOrange, right of=C32] (C64) {64 };
- \path[->]<4-> node[mediumRed,  right of=C256] (C512) { 512 };
-\path[->]<5->node[formatRed,  right of=C512] (C128) { 128 };
-
-%edges
- \path[->]<6->  node[mediumGreen,label=above:$32\times32$] (C1024) { 1024 }
- (C1024) edge node {} (C32);
-  \path[->]<7-> node[mediumGreen, below of=C32,label=above:$16\times16$] (C256) { 256 }
- (C256) edge node {}(C16);
-  \path[->]<8-> node[mediumOrange, right of=C32,label=above:$2\times32$] (C64) {64 }
- (C64) edge node {} (C2)
-  edge node {} (C32);
- \path[->]<9->  node[mediumRed,  right of=C256,label=below:$2\times256$] (C512) { 512 }
- (C512) edge node {} (C2)
-  edge node {} (C256);
- \path[->]<10-> node[formatRed,  right of=C512,label=below:$2\times64$] (C128) {128 }
-  (C128) edge node {} (C2)
-  edge node {} (C64);
-
-\end{tikzpicture}
-\end{figure}
-\end{frame}
-
-
-\section*{Summary}
-
-\begin{frame}{Summary}
-
-  % Keep the summary *very short*.
-  \begin{itemize}
-  % \item
-  %   The \alert{first main message} of your talk in one or two lines.
-  \item
-    In this work implemented a two-dimensional integer convolution
-%\pause
-  \item
-    Possible sizes are - 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024
-  \end{itemize}
-
- \pause 
-  % The following outlook is optional.
-  \vskip0pt plus.5fill
-  \begin{itemize}
-  \item
-    Outlook
-    \begin{itemize}
-    \item
-Next task to investigate the possibility of constructing fast two-dimensional convolution for sizes that are not powers of two
-
-    \end{itemize}
-  \end{itemize}
-\end{frame}
 
 
 
@@ -450,9 +368,9 @@ Next task to investigate the possibility of constructing fast two-dimensional co
 % All of the following is optional and typically not needed. 
 \appendix
 \section<presentation>*{\appendixname}
-\subsection<presentation>*{For Further Reading}
+\subsection<presentation>*{Bibliography}
 \begin{frame}[allowframebreaks]
-  \frametitle<presentation>{For Further Reading}
+  \frametitle<presentation>{Bibliography}
     
   \begin{thebibliography}{3}
     
@@ -461,9 +379,18 @@ Next task to investigate the possibility of constructing fast two-dimensional co
 
 
   \bibitem{Govea1997}
-    Fernando Q. GouvÍa 
+    Fernando Q. Gouv\^ea 
     \newblock {\em P-Adic Numbers: An Introduction }.
     \newblock  Springer (1997)
+ 
+    
+ 
+  % Followed by interesting articles. Keep the list short. 
+
+ \bibitem{  Koblitz1981}
+ Nil  Koblitz
+    \newblock {\em P-adic Numbers, p-adic Analysis, and Zeta-Functions }.
+    \newblock  Mir (1981)
  
     
   \beamertemplatearticlebibitems
@@ -471,11 +398,10 @@ Next task to investigate the possibility of constructing fast two-dimensional co
 
   \bibitem{Morozov2011}
     Denis Morozov
-    \newblock Differentiable finite-state izometries and izometric polynomials of the ring of
-integer 2-adic numbers
-    \newblock {\em 8th Int.  Algebraic Conf.  in  Ukraine:  Abstr.
-Lugansk}
-    \newblock July,  2011
+    \newblock {\em  Differentiable finite-state izometries and izometric polynomials of the ring of
+integer 2-adic numbers}.
+    \newblock 8th Int.  Algebraic Conf.  in  Ukraine:  Abstr.
+    \newblock Lugansk, July 2011
 
   \end{thebibliography}
 \end{frame}
