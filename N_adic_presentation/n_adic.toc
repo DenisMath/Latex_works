@@ -1,0 +1,8 @@
+\beamer@endinputifotherversion {3.24pt}
+\select@language {english}
+\beamer@sectionintoc {1}{Objective}{4}{0}{1}
+\beamer@subsectionintoc {1}{1}{Introduction}{4}{0}{1}
+\beamer@subsectionintoc {1}{2}{Basic properties of ultrametrics}{9}{0}{1}
+\beamer@sectionintoc {2}{Description}{14}{0}{2}
+\beamer@subsectionintoc {2}{1}{Key components of the course}{14}{0}{2}
+\beamer@subsectionintoc {2}{2}{Possible directions for further study}{29}{0}{2}

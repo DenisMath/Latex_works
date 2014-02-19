@@ -1,0 +1,29 @@
+\documentclass[a4paper,11pt]{article}
+
+\usepackage[T2A]{fontenc}
+\usepackage[cp1251]{inputenc}
+\usepackage[ukrainian,english]{babel}
+\usepackage{amssymb,upref}
+\usepackage{amsmath,amsthm}
+\usepackage{multicol}
+\usepackage{geometry}
+\usepackage[dvips]{graphicx}
+
+\usepackage{tikz}
+\usetikzlibrary{positioning,arrows}
+
+\begin{document}
+\begin{tikzpicture}[thick,
+                    node distance=2cm,
+                    text height=1.5ex,
+                    text depth=.25ex]
+\node[format]  (tex) {.tex};
+\node[format,right of=tex] (dvi) {.dvi};
+\node[format,right of=dvi] (ps)  {.ps};
+\node[format,right of=ps]  (pdf) {.pdf};
+
+\path[->] (tex) edge (dvi);
+\path[->] (dvi) edge (ps);
+\path[->] (ps)  edge (pdf);
+\end{tikzpicture}
+\end{document}

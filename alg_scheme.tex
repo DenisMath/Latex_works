@@ -1,0 +1,154 @@
+\documentclass{article}
+
+\usepackage[T2A]{fontenc}
+\usepackage[cp1251]{inputenc}
+\usepackage[russian,english]{babel}
+
+%\usepackage[left=2cm,right=2cm, top=2cm,bottom=2cm,bindingoffset=0cm]{geometry}
+
+\usepackage{tikz}
+\usetikzlibrary{shapes,arrows}
+
+\usepackage[linesnumbered]{algorithm2e}
+
+
+\begin{document}
+\pagestyle{empty}
+
+
+\tikzstyle{inout} = 
+        [
+                block,
+                trapezium,
+                trapezium left angle=60,
+                trapezium right angle=120pt,
+                text centered
+        ]
+
+\tikzstyle{decision} =
+        [
+                diamond,
+                draw,
+                fill = green!20,
+                text width = 6em,
+                text badly centered,
+                node distance = 2cm,
+                inner sep = 0pt
+        ]
+\tikzstyle{block} =
+        [
+                rectangle,
+                draw,
+                fill = blue!20,
+                text width = 6em,
+                text centered,
+                %rounded corners,
+                minimum height = 2em
+        ]
+\tikzstyle{line} =
+        [
+                draw,
+                -latex'
+        ]
+\tikzstyle{cloud} =
+        [
+                draw,
+                ellipse,
+                fill = red!20,
+                node distance = 3cm,
+                minimum height = 2em
+        ]
+% ...
+\begin{tikzpicture}[node distance = 1cm, auto]
+        %\node[tape, draw, tape bend top=none](temp){Temp}
+        \node [cloud] (start) {Начало};
+        \node [inout, below of = start] (phase1) {Этап 1};
+        \node [block, below of = phase1] (phase2) {Этап 2};
+        \node [block, left of=phase2, node distance = 3cm] (phase3) {Этап 3};
+        \node [block, below of = phase3] (phase4) {Этап 4};
+        \node [block, below of = phase4] (phase5) {Этап 5};
+        \node [block, below of = phase5] (phase6) {Этап 6};
+        \node [block, below of = phase6] (phase7) {Этап 7};
+        \node [block, left of = phase4, node distance = 3cm] (correction) {Коррекция};
+        \node [decision, below of = phase7] (condition) {Условие};
+        \node [cloud, below of = condition] (finish) {Конец};
+        \path [line] (start) -- (phase1);
+        \path [line] (phase1) -- (phase2);
+        \path [line] (phase1) -- (phase3);
+        \path [line] (phase3) -- (phase4);
+        \path [line] (phase4) -- (phase5);
+        \path [line] (phase5) -- (phase6);
+        \path [line] (phase6) -- (phase7);
+        \path [line] (phase7) -- (condition);
+        \path [line] (condition) -| node [near start] {Нет} (correction);
+        \path [line] (correction) |- (phase1);
+        \path [line] (condition) -- node {Да}(finish);
+\end{tikzpicture}
+
+% Define block styles
+\tikzstyle{decision} = [diamond, draw, fill=blue!20, 
+    text width=4.5em, text badly centered, node distance=3cm, inner sep=0pt]
+\tikzstyle{block} = [rectangle, draw, fill=blue!20, 
+    text width=5em, text centered, rounded corners, minimum height=4em]
+\tikzstyle{line} = [draw, -latex']
+\tikzstyle{cloud} = [draw, ellipse,fill=red!20, node distance=3cm,
+    minimum height=2em]
+    
+\begin{tikzpicture}[node distance = 2cm, auto]
+    % Place nodes
+    \node [block] (init) {initialize model};
+    \node [cloud, left of=init] (expert) {expert};
+    \node [cloud, right of=init] (system) {system};
+    \node [block, below of=init] (identify) {identify candidate models};
+    \node [block, below of=identify] (evaluate) {evaluate candidate models};
+    \node [block, left of=evaluate, node distance=3cm] (update) {update model};
+    \node [decision, below of=evaluate] (decide) {is best candidate better?};
+    \node [block, below of=decide, node distance=3cm] (stop) {stop};
+    % Draw edges
+    \path [line] (init) -- (identify);
+    \path [line] (identify) -- (evaluate);
+    \path [line] (evaluate) -- (decide);
+    \path [line] (decide) -| node [near start] {yes} (update);
+    \path [line] (update) |- (identify);
+    \path [line] (decide) -- node {no}(stop);
+    \path [line,dashed] (expert) -- (init);
+    \path [line,dashed] (system) -- (init);
+    \path [line,dashed] (system) |- (evaluate);
+\end{tikzpicture}
+
+
+
+\tikzstyle{print_block} =
+         [
+                 tape,
+                 draw,
+                 tape bend top=none
+                 text width = 6em,
+                 text badly centered,
+                 node distance = 1cm
+         ]
+
+\tikzstyle{cloud} =
+         [
+                 draw,
+                 ellipse,
+                 node distance = 1cm,
+                 minimum height = 2em
+         ]
+
+\tikzstyle{line} =
+         [
+                 draw,
+                 -latex'
+         ]
+
+\begin{tikzpicture}[node distance = 1cm, auto]
+         \node [cloud] (start) {Начало};
+         \node [print_block, below of = start] (print) {Печать};
+         \node [cloud, below of = print] (finish) {Конец};
+         \path [line] (start) -- (print);
+         \path [line] (print) -- (finish);
+\end{tikzpicture}
+
+
+\end{document}

@@ -1,0 +1,153 @@
+\documentclass{article}
+
+\usepackage[T2A]{fontenc}
+\usepackage[cp1251]{inputenc}
+\usepackage[russian,english]{babel}
+
+%\usepackage[left=2cm,right=2cm, top=2cm,bottom=2cm,bindingoffset=0cm]{geometry}
+
+\usepackage{tikz}
+\usetikzlibrary{shapes,arrows}
+
+\usepackage[linesnumbered]{algorithm2e}
+
+
+\begin{document}
+\pagestyle{empty}
+
+
+
+Результат работы алгоритма:
+
+1 вариант - структура с ключами ip и значениями - массив временных отметок.
+Плюсы - требует меньше памяти,
+минусы - специфическая структура данных.
+
+2 вариант - таблица с логами, соответствующими отметкам.
+Плюсы - унификация, на вход таблица, на выход таблица,
+минусы - больший размер в сравнении с 1-м вариантом.
+
+Начало алгоритма 
+
+Вход - таблица логов, параметр точности accuracyTime создания ip блока - неотрицательное целое число минут.
+
+Берем строку из входной таблицы, если координата условно равна текущей, то ничего не меняем, берем следующую строку.
+
+Если нет, то запускаем модуль изменения координаты.
+
+Есть предыдущая координата, текущая отличается. Если по времени отличается от предыдущей меньше, чем на accuracyTime, то берем следующий лог и т.д. Изменения происходят в следующих двух случаях - если координата вернулась к исходному значению, тогда запускается общая схема.
+
+Если координата не равна исходному значению и отличается от зафиксированной на величину, большую, чем accuracyTime, то фиксированная точка считается концом ip-блока. Следующий за ним лог считается началом нового и алгоритм повторяется. 
+
+
+\begin{algorithm}[H]
+ \KwData{logs base}
+ \KwResult{Scheme of common grous on logs' set}
+  SELECT * FROM data WHERE data.coord IS NOT NULL ORDER BY ip, time\;
+ \While{not end of data}{
+  $cin \gg line$\;
+  $compIP \gets currentIP \gets line.ip$\;
+  $tempCoord \gets line.coord$\;
+  \eIf{$compIP = currentIP$}{
+   Proc1\;
+   }{
+   currentIP = line.ip\;
+   Proc2\;
+  }
+ }
+ \caption{Group logs algorithm}
+\end{algorithm}
+
+
+\tikzstyle{decision} =
+        [
+                diamond,
+                draw,
+                fill = green!20,
+                text width = 6em,
+                text badly centered,
+                node distance = 2cm,
+                inner sep = 0pt
+        ]
+\tikzstyle{block} =
+        [
+                rectangle,
+                draw,
+                fill = blue!20,
+                text width = 6em,
+                text centered,
+                rounded corners,
+                minimum height = 2em
+        ]
+\tikzstyle{line} =
+        [
+                draw,
+                -latex'
+        ]
+\tikzstyle{cloud} =
+        [
+                draw,
+                ellipse,
+                fill = red!20,
+                node distance = 3cm,
+                minimum height = 2em
+        ]
+% ...
+\begin{tikzpicture}[node distance = 1cm, auto]
+        \node [cloud] (start) {Начало};
+        \node [block, below of = start] (phase1) {Этап 1};
+        \node [block, below of = phase1] (phase2) {Этап 2};
+        \node [block, left of=phase2, node distance = 3cm] (phase3) {Этап 3};
+        \node [block, below of = phase3] (phase4) {Этап 4};
+        \node [block, below of = phase4] (phase5) {Этап 5};
+        \node [block, below of = phase5] (phase6) {Этап 6};
+        \node [block, below of = phase6] (phase7) {Этап 7};
+        \node [block, left of = phase4, node distance = 3cm] (correction) {Коррекция};
+        \node [decision, below of = phase7] (condition) {Условие};
+        \node [cloud, below of = condition] (finish) {Конец};
+        \path [line] (start) -- (phase1);
+        \path [line] (phase1) -- (phase2);
+        \path [line] (phase1) -- (phase3);
+        \path [line] (phase3) -- (phase4);
+        \path [line] (phase4) -- (phase5);
+        \path [line] (phase5) -- (phase6);
+        \path [line] (phase6) -- (phase7);
+        \path [line] (phase7) -- (condition);
+        \path [line] (condition) -| node [near start] {Нет} (correction);
+        \path [line] (correction) |- (phase1);
+        \path [line] (condition) -- node {Да}(finish);
+\end{tikzpicture}
+
+% Define block styles
+\tikzstyle{decision} = [diamond, draw, fill=blue!20, 
+    text width=4.5em, text badly centered, node distance=3cm, inner sep=0pt]
+\tikzstyle{block} = [rectangle, draw, fill=blue!20, 
+    text width=5em, text centered, rounded corners, minimum height=4em]
+\tikzstyle{line} = [draw, -latex']
+\tikzstyle{cloud} = [draw, ellipse,fill=red!20, node distance=3cm,
+    minimum height=2em]
+    
+\begin{tikzpicture}[node distance = 2cm, auto]
+    % Place nodes
+    \node [block] (init) {initialize model};
+    \node [cloud, left of=init] (expert) {expert};
+    \node [cloud, right of=init] (system) {system};
+    \node [block, below of=init] (identify) {identify candidate models};
+    \node [block, below of=identify] (evaluate) {evaluate candidate models};
+    \node [block, left of=evaluate, node distance=3cm] (update) {update model};
+    \node [decision, below of=evaluate] (decide) {is best candidate better?};
+    \node [block, below of=decide, node distance=3cm] (stop) {stop};
+    % Draw edges
+    \path [line] (init) -- (identify);
+    \path [line] (identify) -- (evaluate);
+    \path [line] (evaluate) -- (decide);
+    \path [line] (decide) -| node [near start] {yes} (update);
+    \path [line] (update) |- (identify);
+    \path [line] (decide) -- node {no}(stop);
+    \path [line,dashed] (expert) -- (init);
+    \path [line,dashed] (system) -- (init);
+    \path [line,dashed] (system) |- (evaluate);
+\end{tikzpicture}
+
+
+\end{document}
