@@ -1,0 +1,62 @@
+% преамбула документа
+\documentclass[fullscreen=true, bookmarks=false]{beamer}
+\usepackage[cp1251]{inputenc}
+\usepackage[english,russian]{babel}
+\usepackage{xcolor}
+\usepackage{wrapfig}
+%\usetheme{Goettingen}
+\usetheme{Warsaw}
+%\usecolortheme{beetle}
+%\setbeamercovered{transparent}
+%\setbeamertemplate{blocks}[rounded]% [shadow=false]
+%\setbeamertemplate{frames}[shadow=false]
+
+%\usebackgroundtemplate{\includegraphics[width=\paperwidth,height=\paperheight,  keepaspectratio]{beamer1_biw.PNG}}
+%
+% \usebackgroundtemplate{\centering
+%         \includegraphics[height=7cm, keepaspectratio]{beamer1_biw.PNG}}
+
+%\addtobeamertemplate{frame begin}{\pgfsetfillopacity{0.7}}{\pgfsetfillopacity{1}}
+%\addtobeamertemplate{block begin}{\pgfsetfillopacity{0.7}}{\pgfsetfillopacity{1}}
+\title{Introduction to N-adic numbers}
+\subtitle{Practical Applications}
+\author{ƒенис ћорозов}
+\institute{Samsung R\&D}
+\date{\today}
+
+%\setbeamercolor{color1}{fg = white}
+%\setbeamercolor{block title}{bg=red!30,fg=black}
+%\setbeamercolor{block body}{bg=red!30,fg=blue}
+
+\begin{document}
+
+\begin{frame}
+\titlepage
+\end{frame}
+
+\begin{frame}
+\begin{figure}[h]
+\center{\includegraphics[width=10em]{fomenko_solenoid.jpg} }
+\caption{јнатолий ‘оменко, 2-адический соленоид}
+\label{ris:image}
+\end{figure}
+%\centering \hspace{4em}\includegraphics[width=10em, keepaspectratio]{fomenko_solenoid.jpg}
+\end{frame}
+\begin{frame}{÷ель}
+÷елью курса €вл€етс€ создание представлени€ о методах N-адического анализа. –ассматриваетс€ естественна€ дл€ архитектуры процессора метрика не архимедовых метрических пространств. ќбъ€сн€етс€ представление дополнительным кодом отрицательного числа в регистре процессора и возможность замены в некоторых случа€х ресурсоемкой операции делени€ на операцию умножени€ на целое число. 
+\end{frame}
+
+\begin{frame}{ћотиваци€}
+
+\begin{block}{≈стественность}
+% 
+ѕо следующим причинам рассмотрение ультраметрик( неархимедовых метрических пространств) €вл€етс€ естественным:
+’от€ в контексте действительного анализа компьютер €вл€етс€ дискретной системой, но с точки зрени€ 2-адического - непрерывной. “о есть современный компьютер по сути €вл€ес€ аналоговым c точки зрени€ не архимедова анализа.
+ \end{block}
+\begin{block}{Ѕыстрые вычислени€}
+2-адическа€ непрерывность основных операций процессора позвол€ет построение моделей, использующих дробные числа, при этом все производимые вычислени€ остаютс€ в множестве целых чисел.
+\end{block}
+\end{frame}
+
+\end{document}
+
