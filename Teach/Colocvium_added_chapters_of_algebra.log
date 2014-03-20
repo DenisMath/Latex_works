@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=latex 2014.1.9)  17 MAR 2014 15:55
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2012.12.18)  19 MAR 2014 18:35
 entering extended mode
 **\input Colocvium_added_chapters_of_algebra.tex
 (d:\GitHub\Latex_works\Teach\Colocvium_added_chapters_of_algebra.tex
@@ -22,25 +22,24 @@ File: size11.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
 ("C:\Program Files\MiKTeX 2.9\tex\latex\base\fontenc.sty"
 Package: fontenc 2005/09/27 v1.99g Standard LaTeX package
 
-("C:\Documents and Settings\IBM T41\Application Data\MiKTeX\2.9\tex\latex\cyril
-lic\t2aenc.def"
+("C:\Program Files\MiKTeX 2.9\tex\latex\cyrillic\t2aenc.def"
 File: t2aenc.def 2005/09/27 v1.0i Cyrillic encoding definition file
 )
 LaTeX Font Info:    Try loading font information for T2A+cmr on input line 100.
 
 
-("C:\Documents and Settings\IBM T41\Application Data\MiKTeX\2.9\tex\latex\cyril
-lic\t2acmr.fd"
+("C:\Program Files\MiKTeX 2.9\tex\latex\cyrillic\t2acmr.fd"
 File: t2acmr.fd 2001/08/11 v1.0a Computer Modern Cyrillic font definitions
-)) ("C:\Program Files\MiKTeX 2.9\tex\latex\base\inputenc.sty"
+))
+("C:\Program Files\MiKTeX 2.9\tex\latex\base\inputenc.sty"
 Package: inputenc 2008/03/30 v1.1d Input encoding file
 \inpenc@prehook=\toks14
 \inpenc@posthook=\toks15
 
-("C:\Documents and Settings\IBM T41\Application Data\MiKTeX\2.9\tex\latex\cyril
-lic\cp1251.def"
+("C:\Program Files\MiKTeX 2.9\tex\latex\cyrillic\cp1251.def"
 File: cp1251.def 1999/11/16 v1.0d Input encoding file
-)) ("C:\Program Files\MiKTeX 2.9\tex\generic\babel\babel.sty"
+))
+("C:\Program Files\MiKTeX 2.9\tex\generic\babel\babel.sty"
 Package: babel 2008/07/08 v3.8m The Babel package
 
 *************************************
@@ -66,54 +65,54 @@ Language: english 2005/03/30 v3.3o English support from the babel system
 \l@newzealand = a dialect from \language\l@british 
 ))
 ("C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\amssymb.sty"
-Package: amssymb 2013/01/14 v3.01 AMS font symbols
+Package: amssymb 2009/06/22 v3.00
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\amsfonts.sty"
-Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
+Package: amsfonts 2009/06/22 v3.00 Basic AMSFonts support
 \@emptytoks=\toks16
 \symAMSa=\mathgroup4
 \symAMSb=\mathgroup5
 LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
-(Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 96.
 ))
-("C:\Program Files\MiKTeX 2.9\tex\latex\amscls\upref.sty"
+("C:\Program Files\MiKTeX 2.9\tex\latex\ams\classes\upref.sty"
 Package: upref 2004/07/29 v2.01
 )
-("C:\Program Files\MiKTeX 2.9\tex\latex\amsmath\amsmath.sty"
-Package: amsmath 2013/01/14 v2.14 AMS math features
+("C:\Program Files\MiKTeX 2.9\tex\latex\ams\math\amsmath.sty"
+Package: amsmath 2000/07/18 v2.13 AMS math features
 \@mathmargin=\skip43
 
 For additional information on amsmath, use the `?' option.
-("C:\Program Files\MiKTeX 2.9\tex\latex\amsmath\amstext.sty"
+("C:\Program Files\MiKTeX 2.9\tex\latex\ams\math\amstext.sty"
 Package: amstext 2000/06/29 v2.01
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\amsmath\amsgen.sty"
+("C:\Program Files\MiKTeX 2.9\tex\latex\ams\math\amsgen.sty"
 File: amsgen.sty 1999/11/30 v2.0
 \@emptytoks=\toks17
 \ex@=\dimen104
 ))
-("C:\Program Files\MiKTeX 2.9\tex\latex\amsmath\amsbsy.sty"
+("C:\Program Files\MiKTeX 2.9\tex\latex\ams\math\amsbsy.sty"
 Package: amsbsy 1999/11/29 v1.2d
 \pmbraise@=\dimen105
 )
-("C:\Program Files\MiKTeX 2.9\tex\latex\amsmath\amsopn.sty"
+("C:\Program Files\MiKTeX 2.9\tex\latex\ams\math\amsopn.sty"
 Package: amsopn 1999/12/14 v2.01 operator names
 )
 \inf@bad=\count88
-LaTeX Info: Redefining \frac on input line 210.
+LaTeX Info: Redefining \frac on input line 211.
 \uproot@=\count89
 \leftroot@=\count90
-LaTeX Info: Redefining \overline on input line 306.
+LaTeX Info: Redefining \overline on input line 307.
 \classnum@=\count91
 \DOTSCASE@=\count92
-LaTeX Info: Redefining \ldots on input line 378.
-LaTeX Info: Redefining \dots on input line 381.
-LaTeX Info: Redefining \cdots on input line 466.
+LaTeX Info: Redefining \ldots on input line 379.
+LaTeX Info: Redefining \dots on input line 382.
+LaTeX Info: Redefining \cdots on input line 467.
 \Mathstrutbox@=\box26
 \strutbox@=\box27
 \big@size=\dimen106
-LaTeX Font Info:    Redeclaring font encoding OML on input line 566.
-LaTeX Font Info:    Redeclaring font encoding OMS on input line 567.
+LaTeX Font Info:    Redeclaring font encoding OML on input line 567.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 568.
 \macc@depth=\count93
 \c@MaxMatrixCols=\count94
 \dotsspace@=\muskip10
@@ -134,10 +133,10 @@ LaTeX Font Info:    Redeclaring font encoding OMS on input line 567.
 \multlinegap=\skip44
 \multlinetaggap=\skip45
 \mathdisplay@stack=\toks21
-LaTeX Info: Redefining \[ on input line 2665.
-LaTeX Info: Redefining \] on input line 2666.
+LaTeX Info: Redefining \[ on input line 2666.
+LaTeX Info: Redefining \] on input line 2667.
 )
-("C:\Program Files\MiKTeX 2.9\tex\latex\amscls\amsthm.sty"
+("C:\Program Files\MiKTeX 2.9\tex\latex\ams\classes\amsthm.sty"
 Package: amsthm 2004/08/06 v2.20
 \thm@style=\toks22
 \thm@bodyfont=\toks23
@@ -158,7 +157,7 @@ Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
 )
 ("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\ifpdf.sty"
 Package: ifpdf 2011/01/30 v2.3 Provides the ifpdf switch (HO)
-Package ifpdf Info: pdfTeX in PDF mode is not detected.
+Package ifpdf Info: pdfTeX in PDF mode is detected.
 )
 ("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\ifvtex.sty"
 Package: ifvtex 2010/03/01 v1.5 Detect VTeX and its facilities (HO)
@@ -218,9 +217,9 @@ LaTeX Font Info:    Checking defaults for T2A/cmr/m/n on input line 13.
 LaTeX Font Info:    ... okay on input line 13.
 
 *geometry* driver: auto-detecting
-*geometry* detected driver: dvips
+*geometry* detected driver: pdftex
 *geometry* verbose mode - [ preamble ] result:
-* driver: dvips
+* driver: pdftex
 * paper: a4paper
 * layout: <same size as paper>
 * layoutoffset:(h,v)=(0.0pt,0.0pt)
@@ -253,41 +252,56 @@ LaTeX Font Info:    ... okay on input line 13.
 
 LaTeX Font Info:    Try loading font information for U+msa on input line 30.
 ("C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\umsa.fd"
-File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+File: umsa.fd 2009/06/22 v3.00 AMS symbols A
 )
 LaTeX Font Info:    Try loading font information for U+msb on input line 30.
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\umsb.fd"
-File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+File: umsb.fd 2009/06/22 v3.00 AMS symbols B
 )
 Overfull \hbox (16.30263pt too wide) in paragraph at lines 31--32
-[]\T2A/cmr/m/n/10.95 Iзоморфiзм груп. Приклади iзоморфних груп. Iнварiанти груп
- при iзоморфiзмних
+[][]\T2A/cmr/m/n/10.95 Iзоморфiзм груп. Приклади iзоморфних груп. Iнварiанти гр
+уп при iзоморфiзмних
  []
 
 
 Overfull \hbox (4.80252pt too wide) in paragraph at lines 32--33
-[]\T2A/cmr/m/n/10.95 Група пiдстановок, кiлькiсть елементiв. Приклади роботи, м
-ноження елементiв.
+[][]\T2A/cmr/m/n/10.95 Група пiдстановок, кiлькiсть елементiв. Приклади роботи,
+ множення елементiв.
  []
 
 
 Overfull \hbox (26.05438pt too wide) in paragraph at lines 35--36
-[]\T2A/cmr/m/n/10.95 Прямий добуток, напiвпрямий добуток, ланцюговий добуток. О
-значення, приклади.
+[][]\T2A/cmr/m/n/10.95 Прямий добуток, напiвпрямий добуток, ланцюговий добуток.
+ Означення, приклади.
  []
 
 [1
 
-] (d:\GitHub\Latex_works\Teach\Colocvium_added_chapters_of_algebra.aux) ) 
+{C:/Documents and Settings/All Users/Application Data/MiKTeX/2.9/pdftex/config/
+pdftex.map}]
+(d:\GitHub\Latex_works\Teach\Colocvium_added_chapters_of_algebra.aux) ) 
 Here is how much of TeX's memory you used:
- 2872 strings out of 493922
- 35417 string characters out of 3147246
- 93780 words of memory out of 3000000
- 6133 multiletter control sequences out of 15000+200000
+ 2866 strings out of 494045
+ 35107 string characters out of 3148320
+ 93560 words of memory out of 3000000
+ 6125 multiletter control sequences out of 15000+200000
  10787 words of font info for 35 fonts, out of 3000000 for 9000
- 841 hyphenation exceptions out of 8191
- 27i,4n,26p,259b,145s stack positions out of 5000i,500n,10000p,200000b,50000s
-
-Output written on Colocvium_added_chapters_of_algebra.dvi (1 page, 2692 bytes).
+ 715 hyphenation exceptions out of 8191
+ 27i,4n,24p,259b,145s stack positions out of 5000i,500n,10000p,200000b,50000s
+ <C:\Doc
+uments and Settings\All Users\Application Data\MiKTeX\2.9\fonts\pk\ljfour\unkno
+wn\unknown\dpi600\larm1095.pk> <C:\Documents and Settings\Р‚В¤В¬РЃВ­РЃР±РІР°В Р
+ІВ®Р°\Application Data\MiKTeX\2.9\fonts\pk\ljfour\lh\lh-t2a\dpi600\lasl1095.pk>
+ <C:\Documents and Settings\All Users\Application Data\MiKTeX\2.9\fonts\pk\ljfo
+ur\lh\lh-t2a\dpi600\labx1095.pk><C:/Program Files/MiKTeX 2.9/fonts/type1/public
+/amsfonts/cm/cmmi8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts
+/cm/cmr8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/m
+sbm10.pfb>
+Output written on Colocvium_added_chapters_of_algebra.pdf (1 page, 50509 bytes)
+.
+PDF statistics:
+ 118 PDF objects out of 1000 (max. 8388607)
+ 0 named destinations out of 1000 (max. 500000)
+ 1 words of extra memory for PDF output out of 10000 (max. 10000000)
 

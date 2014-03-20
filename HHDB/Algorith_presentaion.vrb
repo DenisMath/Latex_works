@@ -1,0 +1,30 @@
+\frametitle{Алгоритм постоения HouseHolds}
+\fontsize{6}{8pt}\selectfont
+\begin{block}{Пример генерации ip-блоков}
+\begin{verbatim}
+# block_ip,151.224.40.62
+# number of line,10
+151.224.40.62,2013-09-16 16:53:13 UTC,,53.42925,-2.128273,BlackBerry,BlackBerry Curve,SK6
+151.224.40.62,2013-09-17 16:46:05 UTC,,53.430023,-2.129372,BlackBerry,BlackBerry Curve,SK6
+151.224.40.62,2013-09-17 16:47:47 UTC,,53.429276,-2.129783,BlackBerry,BlackBerry Curve,SK6
+151.224.40.62,2013-09-17 17:42:11 UTC,,53.42925,-2.128273,BlackBerry,BlackBerry Curve,SK6
+151.224.40.62,2013-09-17 18:27:34 UTC,,53.42925,-2.128273,BlackBerry,BlackBerry Curve,SK6
+151.224.40.62,2013-09-17 18:58:01 UTC,,53.429585,-2.129502,BlackBerry,BlackBerry Curve,SK6
+151.224.40.62,2013-09-18 08:27:51 UTC,c5e90e7622ee6c4846f4a6a7d8edf6b5780299ae,0,0,Android,,n3
+151.224.40.62,2013-09-18 08:29:52 UTC,05bdacc10cf0ba4e73e96ff0f669b71a9f440ea3,0,0,Android,,n3
+151.224.40.62,2013-09-19 16:54:24 UTC,,53.42861,-2.129557,BlackBerry,BlackBerry Curve,SK6
+151.224.40.62,2013-09-19 16:54:26 UTC,,53.42861,-2.129557,BlackBerry,BlackBerry Curve,SK6
+# number of id,3
+
+c5e90e7622ee6c4846f4a6a7d8edf6b5780299ae
+05bdacc10cf0ba4e73e96ff0f669b71a9f440ea3
+# number of coord,6
+53.430023,-2.129372
+53.429276,-2.129783
+53.42925,-2.128273
+53.429585,-2.129502
+0,0
+53.42861,-2.129557
+#
+\end{verbatim}
+\end{block}
