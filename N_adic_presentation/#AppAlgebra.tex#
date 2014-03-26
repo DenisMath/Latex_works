@@ -105,13 +105,13 @@
 \usepackage{verbatim}
 \usetikzlibrary{arrows,shapes}
 
-% Курс нужен для более глубокого понимания работы процессора. Полученные знания могут быть использованы для оптимизации вычислительных алгоритмов.
+% РљСѓСЂСЃ РЅСѓР¶РµРЅ РґР»СЏ Р±РѕР»РµРµ РіР»СѓР±РѕРєРѕРіРѕ РїРѕРЅРёРјР°РЅРёСЏ СЂР°Р±РѕС‚С‹ РїСЂРѕС†РµСЃСЃРѕСЂР°. РџРѕР»СѓС‡РµРЅРЅС‹Рµ Р·РЅР°РЅРёСЏ РјРѕРіСѓС‚ Р±С‹С‚СЊ РёСЃРїРѕР»СЊР·РѕРІР°РЅС‹ РґР»СЏ РѕРїС‚РёРјРёР·Р°С†РёРё РІС‹С‡РёСЃР»РёС‚РµР»СЊРЅС‹С… Р°Р»РіРѕСЂРёС‚РјРѕРІ.
 % The course is necessary for a better understanding of the processor's work. The knowledge gained can be used to optimize the computational algorithms.
-\title[2-adic numbers arithmetic] % (optional, use only with long paper titles)
-{2-adic numbers arithmetic}
+\title[Applied Algebra and Number Theory] % (optional, use only with long paper titles)
+{Applied Algebra and Number Theory}
 
 \subtitle
-{Practical Applications}
+{Basic algebraic structures and coding systems}
 
 
 \author[Denis Morozov, PhD] % (optional, use only with lots of authors)
@@ -143,7 +143,7 @@
 % - Not really informative to the audience, more for people (including
 %   yourself) who are reading the slides online
 
-\subject{2-adic numbers course}
+\subject{Applied Algebra and Number Theory}
 % This is only inserted into the PDF information catalog. Can be left
 % out. 
 
@@ -398,7 +398,7 @@ rooted tree "
   \beamertemplatearticlebibitems
   % Followed by interesting articles. Keep the list short. 
 
-  \bibitem{Morozov2011}
+  \bibitem{ Morozov2011}
     Denis Morozov
     \newblock {\em  Differentiable finite-state izometries and izometric polynomials of the ring of
 integer 2-adic numbers}.

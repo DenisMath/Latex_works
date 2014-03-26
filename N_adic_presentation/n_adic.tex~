@@ -107,27 +107,26 @@
 
 % Курс нужен для более глубокого понимания работы процессора. Полученные знания могут быть использованы для оптимизации вычислительных алгоритмов.
 % The course is necessary for a better understanding of the processor's work. The knowledge gained can be used to optimize the computational algorithms.
-\title[2-adic numbers arithmetic] % (optional, use only with long paper titles)
-{2-adic numbers arithmetic}
+\title[Introduction to N-adic numbers] % (optional, use only with long paper titles)
+{Introduction to N-adic numbers}
 
 \subtitle
 {Practical Applications}
 
 
-\author[Denis Morozov, PhD] % (optional, use only with lots of authors)
+\author[Denis Morozov, PhD \ Samsung R\&D] % (optional, use only with lots of authors)
 {Denis~ Morozov, PhD  \\  \texttt{morozov.den@samsung.com}}
 % - Give the names in the same order as the appear in the paper.
 % - Use the \inst{?} command only if the authors have different
 %   affiliation.
-\institute[Faculty of  Computer Science, Department of Mathematics,\\
-  National University of "Kiev-Mogyla Academy"] % (optional, but mostly needed)
+\institute[Samsung R\&D] % (optional, but mostly needed)
 {
-  % \inst{1}%
-  % Samsung R\&D
-  % \and
   \inst{1}%
-  Faculty of  Computer Science, Department of Mathematics,\\
-  National University of "Kiev-Mogyla Academy"}
+  Samsung R\&D
+  \and
+  \inst{2}%
+  Department of Computer Science, doctoral studies\\
+  University of "Kiev-Mogyla Academy"}
 %  \and
 % \vspace{.5cm}
  % \inst{3}%
@@ -137,13 +136,13 @@
 % - Use the \inst command only if there are several affiliations.
 % - Keep it simple, no one is interested in your street address.
 
-\date[November, 2013] % (optional, should be abbreviation of conference name)
+\date[February, 2013] % (optional, should be abbreviation of conference name)
 {Presentation , 2013}
 % - Either use conference name or its abbreviation.
 % - Not really informative to the audience, more for people (including
 %   yourself) who are reading the slides online
 
-\subject{2-adic numbers course}
+\subject{N-adic numbers course}
 % This is only inserted into the PDF information catalog. Can be left
 % out. 
 
@@ -205,7 +204,7 @@
 \subsection{Introduction}
 
 \begin{frame}{Introduction}
-2-adic analysis is key to understanding the logic of the processor.  
+N-adic analysis is key to understanding the logic of the processor.  
 \pause
 
 Not having deep understanding of the nature of the essences we work with, we have to strictly follow the rules that guarantee correct work results.
@@ -293,7 +292,7 @@ Extend uniquely the root of polynomial in $\mathbb{Z}_p$ to of the root of a pol
 
 \begin{frame}{Practice}
 \pause
-\begin{block}{2-adic Arithmetics}
+\begin{block}{N-adic Arithmetics}
 \pause
 Basic of arithmetics of the ring $Z_2$ - addition, multiplication, division. 
 
