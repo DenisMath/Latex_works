@@ -1,0 +1,627 @@
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9) (preloaded format=pdflatex 2013.5.18)  15 APR 2014 15:56
+entering extended mode
+**\input MathModel.tex
+(d:\GitHub\Latex_works\MathModel.tex
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\article.cls"
+Document Class: article 2007/10/19 v1.4h Standard LaTeX document class
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\size12.clo"
+File: size12.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
+)
+\c@part=\count79
+\c@section=\count80
+\c@subsection=\count81
+\c@subsubsection=\count82
+\c@paragraph=\count83
+\c@subparagraph=\count84
+\c@figure=\count85
+\c@table=\count86
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\bibindent=\dimen102
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\fontenc.sty"
+Package: fontenc 2005/09/27 v1.99g Standard LaTeX package
+
+(C:\Users\1\AppData\Roaming\MiKTeX\2.9\tex\latex\cyrillic\t2aenc.def
+File: t2aenc.def 2005/09/27 v1.0i Cyrillic encoding definition file
+)
+LaTeX Font Info:    Try loading font information for T2A+cmr on input line 100.
+
+
+(C:\Users\1\AppData\Roaming\MiKTeX\2.9\tex\latex\cyrillic\t2acmr.fd
+File: t2acmr.fd 2001/08/11 v1.0a Computer Modern Cyrillic font definitions
+))
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\inputenc.sty"
+Package: inputenc 2008/03/30 v1.1d Input encoding file
+\inpenc@prehook=\toks14
+\inpenc@posthook=\toks15
+
+(C:\Users\1\AppData\Roaming\MiKTeX\2.9\tex\latex\cyrillic\cp1251.def
+File: cp1251.def 1999/11/16 v1.0d Input encoding file
+))
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\babel\babel.sty"
+Package: babel 2008/07/08 v3.8m The Babel package
+
+*************************************
+* Local config file bblopts.cfg used
+*
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\00miktex\bblopts.cfg"
+File: bblopts.cfg 2006/07/31 v1.0 MiKTeX 'babel' configuration
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\babel\russianb.ldf"
+Language: russianb 2008/03/21 v1.1r Russian support from the babel system
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\babel\babel.def"
+File: babel.def 2008/07/08 v3.8m Babel common definitions
+\babel@savecnt=\count87
+\U@D=\dimen103
+)
+Package babel Info: Making " an active character on input line 199.
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\babel\english.ldf"
+Language: english 2005/03/30 v3.3o English support from the babel system
+\l@canadian = a dialect from \language\l@american 
+\l@australian = a dialect from \language\l@british 
+\l@newzealand = a dialect from \language\l@british 
+))
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsfonts\amsfonts.sty"
+Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
+\@emptytoks=\toks16
+\symAMSa=\mathgroup4
+\symAMSb=\mathgroup5
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsfonts\amssymb.sty"
+Package: amssymb 2013/01/14 v3.01 AMS font symbols
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amscls\upref.sty"
+Package: upref 2004/07/29 v2.01
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsmath\amsmath.sty"
+Package: amsmath 2013/01/14 v2.14 AMS math features
+\@mathmargin=\skip43
+
+For additional information on amsmath, use the `?' option.
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsmath\amstext.sty"
+Package: amstext 2000/06/29 v2.01
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsmath\amsgen.sty"
+File: amsgen.sty 1999/11/30 v2.0
+\@emptytoks=\toks17
+\ex@=\dimen104
+))
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsmath\amsbsy.sty"
+Package: amsbsy 1999/11/29 v1.2d
+\pmbraise@=\dimen105
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsmath\amsopn.sty"
+Package: amsopn 1999/12/14 v2.01 operator names
+)
+\inf@bad=\count88
+LaTeX Info: Redefining \frac on input line 210.
+\uproot@=\count89
+\leftroot@=\count90
+LaTeX Info: Redefining \overline on input line 306.
+\classnum@=\count91
+\DOTSCASE@=\count92
+LaTeX Info: Redefining \ldots on input line 378.
+LaTeX Info: Redefining \dots on input line 381.
+LaTeX Info: Redefining \cdots on input line 466.
+\Mathstrutbox@=\box26
+\strutbox@=\box27
+\big@size=\dimen106
+LaTeX Font Info:    Redeclaring font encoding OML on input line 566.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 567.
+\macc@depth=\count93
+\c@MaxMatrixCols=\count94
+\dotsspace@=\muskip10
+\c@parentequation=\count95
+\dspbrk@lvl=\count96
+\tag@help=\toks18
+\row@=\count97
+\column@=\count98
+\maxfields@=\count99
+\andhelp@=\toks19
+\eqnshift@=\dimen107
+\alignsep@=\dimen108
+\tagshift@=\dimen109
+\tagwidth@=\dimen110
+\totwidth@=\dimen111
+\lineht@=\dimen112
+\@envbody=\toks20
+\multlinegap=\skip44
+\multlinetaggap=\skip45
+\mathdisplay@stack=\toks21
+LaTeX Info: Redefining \[ on input line 2665.
+LaTeX Info: Redefining \] on input line 2666.
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amscls\amsthm.sty"
+Package: amsthm 2004/08/06 v2.20
+\thm@style=\toks22
+\thm@bodyfont=\toks23
+\thm@headfont=\toks24
+\thm@notefont=\toks25
+\thm@headpunct=\toks26
+\thm@preskip=\skip46
+\thm@postskip=\skip47
+\thm@headsep=\skip48
+\dth@everypar=\toks27
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\tools\multicol.sty"
+Package: multicol 2011/06/27 v1.7a multicolumn formatting (FMi)
+\c@tracingmulticols=\count100
+\mult@box=\box28
+\multicol@leftmargin=\dimen113
+\c@unbalance=\count101
+\c@collectmore=\count102
+\doublecol@number=\count103
+\multicoltolerance=\count104
+\multicolpretolerance=\count105
+\full@width=\dimen114
+\page@free=\dimen115
+\premulticols=\dimen116
+\postmulticols=\dimen117
+\multicolsep=\skip49
+\multicolbaselineskip=\skip50
+\partial@page=\box29
+\last@line=\box30
+\mult@rightbox=\box31
+\mult@grightbox=\box32
+\mult@gfirstbox=\box33
+\mult@firstbox=\box34
+\@tempa=\box35
+\@tempa=\box36
+\@tempa=\box37
+\@tempa=\box38
+\@tempa=\box39
+\@tempa=\box40
+\@tempa=\box41
+\@tempa=\box42
+\@tempa=\box43
+\@tempa=\box44
+\@tempa=\box45
+\@tempa=\box46
+\@tempa=\box47
+\@tempa=\box48
+\@tempa=\box49
+\@tempa=\box50
+\@tempa=\box51
+\c@columnbadness=\count106
+\c@finalcolumnbadness=\count107
+\last@try=\dimen118
+\multicolovershoot=\dimen119
+\multicolundershoot=\dimen120
+\mult@nat@firstbox=\box52
+\colbreak@box=\box53
+\multicol@sort@counter=\count108
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\geometry\geometry.sty"
+Package: geometry 2010/09/12 v5.6 Page Geometry
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\keyval.sty"
+Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
+\KV@toks@=\toks28
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\ifpdf.sty"
+Package: ifpdf 2011/01/30 v2.3 Provides the ifpdf switch (HO)
+Package ifpdf Info: pdfTeX in PDF mode is detected.
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\ifvtex.sty"
+Package: ifvtex 2010/03/01 v1.5 Detect VTeX and its facilities (HO)
+Package ifvtex Info: VTeX not detected.
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\ifxetex\ifxetex.sty"
+Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
+)
+\Gm@cnth=\count109
+\Gm@cntv=\count110
+\c@Gm@tempcnt=\count111
+\Gm@bindingoffset=\dimen121
+\Gm@wd@mp=\dimen122
+\Gm@odd@mp=\dimen123
+\Gm@even@mp=\dimen124
+\Gm@layoutwidth=\dimen125
+\Gm@layoutheight=\dimen126
+\Gm@layouthoffset=\dimen127
+\Gm@layoutvoffset=\dimen128
+\Gm@dimlist=\toks29
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\geometry\geometry.cfg"))
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\graphicx.sty"
+Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\graphics.sty"
+Package: graphics 2009/02/05 v1.0o Standard LaTeX Graphics (DPC,SPQR)
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\trig.sty"
+Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\00miktex\graphics.cfg"
+File: graphics.cfg 2007/01/18 v1.5 graphics configuration of teTeX/TeXLive
+)
+Package graphics Info: Driver file: dvips.def on input line 91.
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\dvips.def"
+File: dvips.def 1999/02/16 v3.0i Driver-dependant file (DPC,SPQR)
+))
+\Gin@req@height=\dimen129
+\Gin@req@width=\dimen130
+)
+(C:\Users\1\AppData\Roaming\MiKTeX\2.9\tex\latex\algorithms\algorithmic.sty
+Package: algorithmic 2009/08/24 v0.1 Document Style `algorithmic'
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\ifthen.sty"
+Package: ifthen 2001/05/26 v1.1c Standard LaTeX ifthen package (DPC)
+)
+\c@ALC@unique=\count112
+\c@ALC@line=\count113
+\c@ALC@rem=\count114
+\c@ALC@depth=\count115
+\ALC@tlm=\skip51
+\algorithmicindent=\skip52
+)
+\c@theorem=\count116
+\c@lemma=\count117
+\c@corollary=\count118
+\c@remark=\count119
+\c@definition=\count120
+\c@example=\count121
+\c@hyp=\count122
+\c@question=\count123
+
+(d:\GitHub\Latex_works\MathModel.aux)
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 25.
+LaTeX Font Info:    ... okay on input line 25.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 25.
+LaTeX Font Info:    ... okay on input line 25.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 25.
+LaTeX Font Info:    ... okay on input line 25.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 25.
+LaTeX Font Info:    ... okay on input line 25.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 25.
+LaTeX Font Info:    ... okay on input line 25.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 25.
+LaTeX Font Info:    ... okay on input line 25.
+LaTeX Font Info:    Checking defaults for T2A/cmr/m/n on input line 25.
+LaTeX Font Info:    ... okay on input line 25.
+
+*geometry* driver: auto-detecting
+*geometry* detected driver: pdftex
+*geometry* verbose mode - [ preamble ] result:
+* driver: pdftex
+* paper: a4paper
+* layout: <same size as paper>
+* layoutoffset:(h,v)=(0.0pt,0.0pt)
+* modes: 
+* h-part:(L,W,R)=(89.62709pt, 418.25368pt, 89.6271pt)
+* v-part:(T,H,B)=(101.40665pt, 591.5302pt, 152.11pt)
+* \paperwidth=597.50787pt
+* \paperheight=845.04684pt
+* \textwidth=418.25368pt
+* \textheight=591.5302pt
+* \oddsidemargin=17.3571pt
+* \evensidemargin=17.3571pt
+* \topmargin=-7.86334pt
+* \headheight=12.0pt
+* \headsep=25.0pt
+* \topskip=12.0pt
+* \footskip=30.0pt
+* \marginparwidth=35.0pt
+* \marginparsep=10.0pt
+* \columnsep=10.0pt
+* \skip\footins=10.8pt plus 4.0pt minus 2.0pt
+* \hoffset=0.0pt
+* \voffset=0.0pt
+* \mag=1000
+* \@twocolumnfalse
+* \@twosidefalse
+* \@mparswitchfalse
+* \@reversemarginfalse
+* (1in=72.27pt=25.4mm, 1cm=28.453pt)
+
+
+Overfull \hbox (12.84892pt too wide) in paragraph at lines 30--31
+[]\T2A/cmr/m/n/12 Базовыми сущностями положим множество логов. Мотивация для ра
+ссмотрения
+ []
+
+
+Overfull \hbox (15.2808pt too wide) in paragraph at lines 30--31
+\T2A/cmr/m/n/12 именно такого базового множества, а не множества девайсов, сост
+оит в начальной
+ []
+
+LaTeX Font Info:    Try loading font information for U+msa on input line 40.
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsfonts\umsa.fd"
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Try loading font information for U+msb on input line 40.
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsfonts\umsb.fd"
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
+LaTeX Font Info:    Try loading font information for U+euf on input line 40.
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsfonts\ueuf.fd"
+File: ueuf.fd 2013/01/14 v3.01 Euler Fraktur
+)
+Overfull \hbox (0.75488pt too wide) in paragraph at lines 42--43
+\T2A/cmr/m/n/12 согласно определенным работой алгоритма критериям, функция $\OM
+L/cmm/m/it/12 i$ \T2A/cmr/m/n/12 - построение
+ []
+
+LaTeX Font Info:    Try loading font information for T2A+cmtt on input line 47.
+
+(C:\Users\1\AppData\Roaming\MiKTeX\2.9\tex\latex\cyrillic\t2acmtt.fd
+File: t2acmtt.fd 2001/08/11 v1.0a Computer Modern Cyrillic font definitions
+)
+Overfull \hbox (6.2754pt too wide) in paragraph at lines 58--59
+[][]\T2A/cmr/m/n/12 В результате выполнения запроса множество логов будет разби
+то на базовые
+ []
+
+[1
+
+{C:/Users/1/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}]
+Overfull \hbox (5.67632pt too wide) in paragraph at lines 68--69
+[][]\T2A/cmr/m/n/12 Строятся каркасы для ip-блоков. Для этого из множества лого
+в выбираются
+ []
+
+
+Overfull \hbox (11.38268pt too wide) in paragraph at lines 68--69
+\T2A/cmr/m/n/12 логи с определенными координатами из доверительных источников. 
+Полученное
+ []
+
+
+Overfull \hbox (21.98839pt too wide) in paragraph at lines 68--69
+\T2A/cmr/m/n/12 множество логов сортируется по ip. В полученных ip-группах данн
+ые сортируются
+ []
+
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 114.
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\omscmr.fd"
+File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 114.
+ [2]
+Overfull \hbox (2.68518pt too wide) in paragraph at lines 122--123
+[][]\T2A/cmr/m/n/12 При построении каркасов ip-блоков алгоритм допускает распар
+аллеливание
+ []
+
+
+Overfull \hbox (12.31134pt too wide) in paragraph at lines 122--123
+\T2A/cmr/m/n/12 путем одновременного вычисления каркасов ip-блоков по различным
+ ip-группам. 
+ []
+
+
+Overfull \hbox (2.16866pt too wide) in paragraph at lines 165--165
+[]\T2A/cmtt/m/n/9 151.224.40.62,2013-09-16 16:53:13 UTC,,53.42925,-2.128273,Bla
+ckBerry,BlackBerry Curve,SK6[] 
+ []
+
+
+Overfull \hbox (6.8925pt too wide) in paragraph at lines 165--165
+[]\T2A/cmtt/m/n/9 151.224.40.62,2013-09-17 16:46:05 UTC,,53.430023,-2.129372,Bl
+ackBerry,BlackBerry Curve,SK6[] 
+ []
+
+
+Overfull \hbox (6.8925pt too wide) in paragraph at lines 165--165
+[]\T2A/cmtt/m/n/9 151.224.40.62,2013-09-17 16:47:47 UTC,,53.429276,-2.129783,Bl
+ackBerry,BlackBerry Curve,SK6[] 
+ []
+
+
+Overfull \hbox (2.16866pt too wide) in paragraph at lines 165--165
+[]\T2A/cmtt/m/n/9 151.224.40.62,2013-09-17 17:42:11 UTC,,53.42925,-2.128273,Bla
+ckBerry,BlackBerry Curve,SK6[] 
+ []
+
+
+Overfull \hbox (2.16866pt too wide) in paragraph at lines 165--165
+[]\T2A/cmtt/m/n/9 151.224.40.62,2013-09-17 18:27:34 UTC,,53.42925,-2.128273,Bla
+ckBerry,BlackBerry Curve,SK6[] 
+ []
+
+
+Overfull \hbox (6.8925pt too wide) in paragraph at lines 165--165
+[]\T2A/cmtt/m/n/9 151.224.40.62,2013-09-17 18:58:01 UTC,,53.429585,-2.129502,Bl
+ackBerry,BlackBerry Curve,SK6[] 
+ []
+
+
+Overfull \hbox (25.78789pt too wide) in paragraph at lines 165--165
+[]\T2A/cmtt/m/n/9 151.224.40.62,2013-09-18 08:27:51 UTC,c5e90e7622ee6c4846f4a6a
+7d8edf6b5780299ae,0,0,Android,,n3[] 
+ []
+
+
+Overfull \hbox (25.78789pt too wide) in paragraph at lines 165--165
+[]\T2A/cmtt/m/n/9 151.224.40.62,2013-09-18 08:29:52 UTC,05bdacc10cf0ba4e73e96ff
+0f669b71a9f440ea3,0,0,Android,,n3[] 
+ []
+
+
+Overfull \hbox (2.16866pt too wide) in paragraph at lines 165--165
+[]\T2A/cmtt/m/n/9 151.224.40.62,2013-09-19 16:54:24 UTC,,53.42861,-2.129557,Bla
+ckBerry,BlackBerry Curve,SK6[] 
+ []
+
+
+Overfull \hbox (2.16866pt too wide) in paragraph at lines 165--165
+[]\T2A/cmtt/m/n/9 151.224.40.62,2013-09-19 16:54:26 UTC,,53.42861,-2.129557,Bla
+ckBerry,BlackBerry Curve,SK6[] 
+ []
+
+[3]
+Overfull \hbox (5.69144pt too wide) in paragraph at lines 170--171
+[][]\T2A/cmr/m/n/12 ip-блоки проверяются на принадлежность к одному house-hold 
+путем анализа
+ []
+
+
+Overfull \hbox (23.2602pt too wide) in paragraph at lines 170--171
+\T2A/cmr/m/n/12 id-инвариантов. При слиянии ip-блоков в house-holds id-инвариан
+ты складываются. 
+ []
+
+
+Overfull \hbox (19.1781pt too wide) in paragraph at lines 176--177
+\T2A/cmr/bx/n/12 Определение 2.2.1. []\T2A/cmr/m/it/12 id-инвариант базового бл
+ока определен следующим образом: 
+ []
+
+
+Overfull \hbox (21.26308pt too wide) in paragraph at lines 178--179
+[][]\T2A/cmr/m/it/12 Пробегаемся по множеству логов - если id присутсвует в лог
+е, увеличиваем
+ []
+
+
+Overfull \hbox (15.49338pt too wide) in paragraph at lines 179--180
+[][]\T2A/cmr/m/it/12 Если id в логе не определено - добавляем к значениям инвар
+ианта значения,
+ []
+
+
+Overfull \hbox (23.50377pt too wide) in paragraph at lines 186--187
+[][]\T2A/cmr/m/n/12 Для объединения 2-х блоков id-инвариант определен, как сумм
+а id-инвариантов
+ []
+
+
+Overfull \hbox (9.04408pt too wide) in paragraph at lines 191--192
+[]\T2A/cmr/m/n/12 По построению идентификация id лога с данным ip происходит по
+ id-инварианту
+ []
+
+[4]
+Overfull \hbox (1.38pt too wide) in paragraph at lines 204--205
+[][]\T2A/cmr/m/n/12 Как было сказано выше ip-блоки проверяются на принадлежност
+ь к одному
+ []
+
+
+Overfull \hbox (4.43433pt too wide) in paragraph at lines 204--205
+\T2A/cmr/m/n/12 house-hold путем анализа id-инвариантов. Возможны различные инт
+ерпретации
+ []
+
+
+Overfull \hbox (3.3554pt too wide) in paragraph at lines 206--207
+\T2A/cmr/m/n/12 двух id-инвариантов. Например к одному house-holds можно отнест
+и множества
+ []
+
+
+Overfull \hbox (6.81432pt too wide) in paragraph at lines 217--219
+\T2A/cmr/m/n/12 длины. Каждый из полученных векторов нормализируем относительно
+ вектора
+ []
+
+[5]
+Overfull \hbox (35.89929pt too wide) in paragraph at lines 238--239
+[]\T2A/cmr/m/n/12 Поскольку анализ данных показывает недостоверность части коор
+динат, полученных
+ []
+
+
+Overfull \hbox (30.02992pt too wide) in paragraph at lines 240--241
+[][]\T2A/cmr/m/n/12 Методы, вычисляющие достоверную координату для ip-блока име
+ют следующую
+ []
+
+
+Overfull \hbox (1.54314pt too wide) in paragraph at lines 242--243
+[][]\T2A/cmr/m/n/12 Простым естественным методом стабилизации координат ip-блок
+а является
+ []
+
+
+Overfull \hbox (41.73146pt too wide) in paragraph at lines 247--248
+[][]\T2A/cmr/m/n/12 Преимуществом данного метода является вычислительная просто
+та. Возращаемая
+ []
+
+
+Overfull \hbox (17.20612pt too wide) in paragraph at lines 247--248
+\T2A/cmr/m/n/12 методом координата является хорошим приближением к фактической 
+координате
+ []
+
+
+Overfull \hbox (46.737pt too wide) in paragraph at lines 247--248
+\T2A/cmr/m/n/12 ip-блока при условии высокого процента количества координат лог
+ов с незначительным
+ []
+
+
+Overfull \hbox (11.94041pt too wide) in paragraph at lines 270--271
+[][]\T2A/cmr/m/n/12 После первого шага агоритма с каждой точкой $\OML/cmm/m/it/
+12 x[]$ \T2A/cmr/m/n/12 связана последовательность 
+ []
+
+[6]
+Overfull \hbox (60.33759pt too wide) in paragraph at lines 273--274
+[][]\T2A/cmr/m/n/12 Выберем из всех $\OML/cmm/m/it/12 \OT1/cmr/m/n/12 (\OML/cm
+m/m/it/12 x[]\OT1/cmr/m/n/12 )$ \T2A/cmr/m/n/12 максимальный. Сравнение произво
+дится в лексикографическом
+ []
+
+
+Overfull \hbox (21.76137pt too wide) in paragraph at lines 273--274
+\T2A/cmr/m/n/12 порядке, вначале сравниваем последние координаты. Если максимум
+ов несколько,
+ []
+
+
+Overfull \hbox (15.50912pt too wide) in paragraph at lines 278--279
+\T2A/cmr/m/n/12 конгруэнтности id-инвариантов в подможествах является независим
+ой, и поэтому
+ []
+
+[7] (d:\GitHub\Latex_works\MathModel.aux) ) 
+Here is how much of TeX's memory you used:
+ 3277 strings out of 493921
+ 40830 string characters out of 3144888
+ 103794 words of memory out of 3000000
+ 6495 multiletter control sequences out of 15000+200000
+ 22283 words of font info for 56 fonts, out of 3000000 for 9000
+ 841 hyphenation exceptions out of 8191
+ 27i,7n,24p,523b,419s stack positions out of 5000i,500n,10000p,200000b,50000s
+ <C:\Users\1\AppData\Local\MiKTeX\2.
+9\fonts\pk\ljfour\lh\lh-t2a\dpi600\latt0900.pk> <C:\Users\1\AppData\Local\MiKTe
+X\2.9\fonts\pk\ljfour\lh\lh-t2a\dpi600\labx1440.pk> <C:\Users\1\AppData\Local\M
+iKTeX\2.9\fonts\pk\ljfour\lh\lh-t2a\dpi600\larm1000.pk> <C:\Users\1\AppData\Loc
+al\MiKTeX\2.9\fonts\pk\ljfour\lh\lh-t2a\dpi600\lati1200.pk> <C:\Users\1\AppData
+\Local\MiKTeX\2.9\fonts\pk\ljfour\lh\lh-t2a\dpi600\labx1200.pk> <C:\Users\1\App
+Data\Local\MiKTeX\2.9\fonts\pk\ljfour\lh\lh-t2a\dpi600\latt1200.pk> <C:\Users\1
+\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\unknown\unknown\dpi600\larm1200.pk> <
+C:\Users\1\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\lh\lh-t2a\dpi600\labx1728.p
+k><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb>
+<C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb><C
+:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/
+Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Pro
+gram Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Progra
+m Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program F
+iles (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Program Files
+ (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program Files (x8
+6)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files (x86)
+/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Program Files (x86)/Mi
+KTeX 2.9/fonts/type1/public/amsfonts/cm/cmti12.pfb><C:/Program Files (x86)/MiKT
+eX 2.9/fonts/type1/public/amsfonts/euler/eufm10.pfb><C:/Program Files (x86)/MiK
+TeX 2.9/fonts/type1/public/amsfonts/symbols/msam10.pfb><C:/Program Files (x86)/
+MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on MathModel.pdf (7 pages, 254753 bytes).
+PDF statistics:
+ 445 PDF objects out of 1000 (max. 8388607)
+ 0 named destinations out of 1000 (max. 500000)
+ 1 words of extra memory for PDF output out of 10000 (max. 10000000)
+

@@ -3,7 +3,7 @@
 \usepackage[cp1251]{inputenc}
 \usepackage[english,russian]{babel}
 \usepackage{xcolor}
-\usepackage{wrapfig}
+%\usepackage{wrapfig}
 \usepackage{algorithmic}
 %\usepackage[linesnumbered]{algorithm2e}
 \usepackage{amssymb,upref}
@@ -20,7 +20,7 @@
 %\usecolortheme{beaver}
 %\usecolortheme{albatross}
 
-%\setbeamercovered{transparent}
+%c\setbeamercovered{transparent}
 %\setbeamertemplate{blocks}[rounded]% [shadow=false]
 %\setbeamertemplate{frames}[shadow=false]
 
@@ -47,6 +47,7 @@
 \titlepage
 \end{frame}
 
+
 % \begin{frame}
 % \begin{figure}[h]
 % \center{\includegraphics[width=10em]{fomenko_solenoid.jpg} }
@@ -55,7 +56,64 @@
 % \end{figure}
 % %\centering \hspace{4em}\includegraphics[width=10em, keepaspectratio]{fomenko_solenoid.jpg}
 % \end{frame}
-\begin{frame}[fragile]{Алгоритм постоения HouseHolds}
+
+\begin{frame}{Формализация проблемы}
+Базовыми сущностями положим множество логов. Мотивация для рассмотрения именно такого базового множества, а не множества девайсов, состоит в начальной неопределенности данного множества, а, следовательно, усложнение модели формалистикой теории нечетких множеств. 
+
+\begin{block}{Степень определенности полей логов}
+\begin{table}[h]
+\begin{center}
+\begin{tabular}{|c|c|c|c|}
+\hline
+time\_stamp & IP & device\_id & location \\
+\hline
+100\% & 100\% & 50\% & 30\% \\
+\hline
+\end{tabular}
+\end{center}
+\end{table}
+\end{block}
+
+
+Правильная группировка множества логов позволяет в некоторых случаях получить $device\_id$  при помощи анализа косвенных данных, предоставляемых множеством логов, методами коллаборативной фильтрации.
+\end{frame}
+
+\begin{frame}{Алгоритм постоения HouseHolds}
+\begin{block}{Общая схема алгоритма}
+\begin{itemize}
+\item Фильтрация  данных
+\item Сортировка данных
+\item Создание ip-блоков
+\item Построение HouseHolds
+\end{itemize}
+\end{block}
+\begin{block}{Дополнительные модули алгоритма}
+
+\begin{itemize}
+\item Стабилизация координат в ip-блоках
+\item Схема распараллеливания алгоритма 
+\end{itemize}
+\end{block}
+\end{frame}
+
+\begin{frame}{Алгоритм постоения HouseHolds}
+\begin{block}{Фильтрация данных}
+Данные фильтруются, логи с идентификатором мобильной связи не рассматриваются. В дальнейшем параметры фильтрации могут быть изменены в зависимости от поставленной задачи.
+\end{block}
+
+\begin{block}{Сортировка данных для построения ip-блоков}
+Создается скелет для ip-блоков. Для этого из множества логов выбираются логи с определенными координатами из доверительных источников. Полученное множество логов сортируется по ip. В полученных ip-группах данные сортируются по времени. 
+\end{block}
+\end{frame}
+
+\begin{frame}{Алгоритм постоения HouseHolds}
+Скелет для ip-блока состоит из двух логов - начального и конечного и строится следующим образом.
+
+Каждый следующий лог сравнивается с предыдущим. Если координата отклонилась на величину, меньшую, чем CoordAccuracy, то переходим к следующему логу. Если нет, то проверяем TimeAccuracy.
+\end{frame}
+
+\begin{frame}[fragile]{Сортировка данных}
+Данный запрос выполняет необходимую для работы алгоритма построения HouseHolds сортировку с частичной фильтрацией: 
 \begin{block}{SQL запрос на выгрузку данных}
 \begin{verbatim}
 
@@ -69,7 +127,15 @@ SELECT * FROM access_log
 \end{verbatim}
 \end{block} 
 \end{frame} 
-\begin{frame}{Алгоритм постоения HouseHolds}
+
+\begin{frame}{Создание ip-блоков}
+Алгоритм построения ip-блоков включает в себя следующие параметры:
+\begin{itemize}
+\item CoordAccuracy
+\item TimeAccuracy
+\end{itemize}
+\end{frame}
+\begin{frame}{Создание ip-блоков}
 \fontsize{6}{8pt}\selectfont
 \begin{block}{Алгоритм постоения ip-блоков}
 \begin{algorithmic}[1] 
@@ -107,7 +173,7 @@ SELECT * FROM access_log
 
 \end{frame}
 
-\begin{frame}[fragile]{Алгоритм постоения HouseHolds}
+\begin{frame}[fragile]{Создание ip-блоков}
  \fontsize{6}{8pt}\selectfont
 \begin{block}{Пример генерации ip-блоков}
 \begin{verbatim}
@@ -177,6 +243,24 @@ $$\mathit{differenceCoeff}(\vec{v_1}, \vec{v_2} ) = \frac{\sum\limits_{i=1}^n |\
 \end{frame}
 
 \begin{frame}{Стабилизация координат ip-блока}
+
+На вход подается список координат с временем захвата лога, на выход - результирующая координата.
+ 
+Простым естественным методом стабилизации  координат  ip-блока является взятие центра масс полученных координат.
+
+\begin{block}{Метод центра масс}
+$$v_{block} = \frac{\sum_{i=1}^n v_i}{n}$$
+\end{block}
+Преимуществом данного метода является вычислительная простота. Возращаемая методом координата является хорошим приближением к фактической координате ip-блока при условии высокого процента количества координат логов с незначительным отклонением от фактической координаты  ip-блока.
+
+
+
+
+
+\end{frame}
+
+\begin{frame}{Стабилизация координат ip-блока}
+Предыдущий метод имеет недостаточную точность, если значительный процент логов имеет неадекватные координаты со значительным отклонением от фактической координаты. В данном случае для нахождение фактической координаты возможно применение следующего принципа.
 \begin{block}{Общий принцип}
 На вход подается список координат с временем захвата лога, на выход - результирующая координата.
  
@@ -184,6 +268,7 @@ $$\mathit{differenceCoeff}(\vec{v_1}, \vec{v_2} ) = \frac{\sum\limits_{i=1}^n |\
 \end{block}
 \end{frame}
 \begin{frame}{Стабилизация координат ip-блока}
+Функция $f: \underset{n}{\bigotimes}(\mathbb{R}\bigotimes\mathbb{R}) \rightarrow \underset{n}{\bigotimes}(list\ of\ \mathbb{N}) $
 \begin{block}{Алгоритм (1-й шаг)}
 \begin{algorithmic}[1] 
 \STATE $\rho_{min} =\{ \min \rho (x_i, x_j) |0\leqslant i,j \leqslant n \}$ 
@@ -205,7 +290,7 @@ $$\mathit{differenceCoeff}(\vec{v_1}, \vec{v_2} ) = \frac{\sum\limits_{i=1}^n |\
  $$\alpha(x_i) = (\alpha_1(x_i),\alpha_2(x_i),\dots,\alpha_n(x_i)). $$
 \end{block}
 \begin{block}{Алгоритм (3-й шаг)}
-Выберем из всех $\alpha(x_i)$ максимальный. Сравнение производится при использовании лексикографического порядка, вначале сравниваем последнии координаты. Если максимумов несколько, выбираем самый последний по времени.
+Выберем из всех $\alpha(x_i)$ максимальный. Сравнение производится при использовании лексикографического порядка, вначале сравниваем последние координаты. Если максимумов несколько, выбираем самый последний по времени.
 \end{block}
 
 \end{frame}

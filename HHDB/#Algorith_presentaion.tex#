@@ -1,0 +1,300 @@
+% преамбула документа
+\documentclass[fullscreen=true, bookmarks=false]{beamer}
+\usepackage[cp1251]{inputenc}
+\usepackage[english,russian]{babel}
+\usepackage{xcolor}
+%\usepackage{wrapfig}
+\usepackage{algorithmic}
+%\usepackage[linesnumbered]{algorithm2e}
+\usepackage{amssymb,upref}
+\usepackage{amsmath,amsthm}
+\usepackage{multicol}
+\usepackage{geometry}
+
+\usetheme{Warsaw}
+%\usetheme{CambridgeUS}
+%\usetheme{Goettingen}
+
+%\usecolortheme{beetle}
+%\usecolortheme{fly}
+%\usecolortheme{beaver}
+%\usecolortheme{albatross}
+
+%c\setbeamercovered{transparent}
+%\setbeamertemplate{blocks}[rounded]% [shadow=false]
+%\setbeamertemplate{frames}[shadow=false]
+
+%\usebackgroundtemplate{\includegraphics[width=\paperwidth,height=\paperheight,  keepaspectratio]{beamer1_biw.PNG}}
+%
+% \usebackgroundtemplate{\centering
+%         \includegraphics[height=7cm, keepaspectratio]{beamer1_biw.PNG}}
+
+%\addtobeamertemplate{frame begin}{\pgfsetfillopacity{0.7}}{\pgfsetfillopacity{1}}
+%\addtobeamertemplate{block begin}{\pgfsetfillopacity{0.7}}{\pgfsetfillopacity{1}}
+\title{HHDB Algorithm}
+\subtitle{Description of alpha realization}
+\author{Denis Morozov, PhD}
+\institute{National University of <<Kyiv-Mohyla Academy>>}
+\date{\today}
+
+%\setbeamercolor{color1}{fg = white}
+%\setbeamercolor{block title}{bg=red!30,fg=black}
+%\setbeamercolor{block body}{bg=red!30,fg=blue}
+
+\begin{document}
+
+\begin{frame}
+\titlepage
+\end{frame}
+
+
+% \begin{frame}
+% \begin{figure}[h]
+% \center{\includegraphics[width=10em]{fomenko_solenoid.jpg} }
+% \caption{Анатолий Фоменко, 2-адический соленоид}
+% \label{ris:image}
+% \end{figure}
+% %\centering \hspace{4em}\includegraphics[width=10em, keepaspectratio]{fomenko_solenoid.jpg}
+% \end{frame}
+
+\begin{frame}{Формализация проблемы}
+Базовыми сущностями положим множество логов. Мотивация для рассмотрения именно такого базового множества, а не множества девайсов, состоит в начальной неопределенности данного множества, а, следовательно, усложнение модели формалистикой теории нечетких множеств. 
+
+\begin{block}{Степень определенности полей логов}
+\begin{table}[h]
+\begin{center}
+\begin{tabular}{|c|c|c|c|}
+\hline
+time\_stamp & IP & device\_id & location \\
+\hline
+100\% & 100\% & 50\% & 30\% \\
+\hline
+\end{tabular}
+\end{center}
+\end{table}
+\end{block}
+
+
+Правильная группировка множества логов позволяет в некоторых случаях получить $device\_id$  при помощи анализа косвенных данных, предоставляемых множеством логов, методами коллаборативной фильтрации.
+\end{frame}
+
+\begin{frame}{Алгоритм постоения HouseHolds}
+\begin{block}{Общая схема алгоритма}
+\begin{itemize}
+\item Фильтрация  данных
+\item Сортировка данных
+\item Создание ip-блоков
+\item Построение HouseHolds
+\end{itemize}
+\end{block}
+\begin{block}{Дополнительные модули алгоритма}
+
+\begin{itemize}
+\item Стабилизация координат в ip-блоках
+\item Схема распараллеливания алгоритма 
+\end{itemize}
+\end{block}
+\end{frame}
+
+\begin{frame}{Алгоритм постоения HouseHolds}
+\begin{block}{Фильтрация данных}
+Данные фильтруются, логи с идентификатором мобильной связи не рассматриваются. В дальнейшем параметры фильтрации могут быть изменены в зависимости от поставленной задачи.
+\end{block}
+
+\begin{block}{Сортировка данных для построения ip-блоков}
+Создается скелет для ip-блоков. Для этого из множества логов выбираются логи с определенными координатами из доверительных источников. Полученное множество логов сортируется по ip. В полученных ip-группах данные сортируются по времени. 
+\end{block}
+\end{frame}
+
+\begin{frame}{Алгоритм постоения HouseHolds}
+Скелет для ip-блока состоит из двух логов - начального и конечного и строится следующим образом.
+
+Каждый следующий лог сравнивается с предыдущим. Если координата отклонилась на величину, меньшую, чем CoordAccuracy, то переходим к следующему логу. Если нет, то проверяем TimeAccuracy.
+\end{frame}
+
+\begin{frame}[fragile]{Сортировка данных}
+Данный запрос выполняет необходимую для работы алгоритма построения HouseHolds сортировку с частичной фильтрацией: 
+\begin{block}{SQL запрос на выгрузку данных}
+\begin{verbatim}
+
+SELECT * FROM access_log 
+           WHERE lat IS NOT NULL 
+                     AND long IS NOT NULL 
+                     AND homebiz-type != "business" 
+                     AND source = 'lls' 
+           ORDER BY ip, time
+
+\end{verbatim}
+\end{block} 
+\end{frame} 
+
+\begin{frame}{Создание ip-блоков}
+Алгоритм построения ip-блоков включает в себя следующие параметры:
+\begin{itemize}
+\item CoordAccuracy
+\item TimeAccuracy
+\end{itemize}
+\end{frame}
+\begin{frame}{Создание ip-блоков}
+\fontsize{6}{8pt}\selectfont
+\begin{block}{Алгоритм постоения ip-блоков}
+\begin{algorithmic}[1] 
+
+\STATE  i = 0
+%\WHILE{ (\NOT end of data) }
+\STATE \label{begin} $cin \gg line$, new  {\bf record}
+\STATE   $currentIP \gets  line.ip, blockCoord \gets  line.coord$ 
+\STATE  push to resultBase  {\bf record} with $record.ip \gets  line.ip, record.coord \gets  line.coord, record.time\_begin \gets  line.time, record.group\_id \gets  i$
+\STATE $i++, cin \gg line$
+ \IF  { $line.ip = currentIP$}  \label{ifip}
+\IF  { $line.coord  \stackrel{ CoordAccuracy}{ \simeq } currentCoord$ } 
+\STATE goto \ref{ifip}
+\ELSE   
+\STATE goto \ref{next}
+\ENDIF 
+\STATE storage.clear()
+\ELSE  
+\STATE $record.time\_end \gets previousTime $  
+\STATE goto \ref{begin}
+\ENDIF 
+\STATE \label{next} $cin \gg line$
+\IF  { $line.time  \stackrel{ TimeAccuracy}{ \simeq } previousTime$ } 
+\STATE storage.push(line)
+
+\STATE goto \ref{ifip}
+\ELSE   
+\STATE goto \ref{next1}
+\ENDIF 
+\STATE \label{next1} do the same with storage
+%\ENDWHILE
+  
+\end{algorithmic}
+\end{block}
+
+\end{frame}
+
+\begin{frame}[fragile]{Создание ip-блоков}
+ \fontsize{6}{8pt}\selectfont
+\begin{block}{Пример генерации ip-блоков}
+\begin{verbatim}
+# block_ip,151.224.40.62
+# number of line,10
+151.224.40.62,2013-09-16 16:53:13 UTC,,53.42925,-2.128273,BlackBerry,BlackBerry Curve,SK6
+151.224.40.62,2013-09-17 16:46:05 UTC,,53.430023,-2.129372,BlackBerry,BlackBerry Curve,SK6
+151.224.40.62,2013-09-17 16:47:47 UTC,,53.429276,-2.129783,BlackBerry,BlackBerry Curve,SK6
+151.224.40.62,2013-09-17 17:42:11 UTC,,53.42925,-2.128273,BlackBerry,BlackBerry Curve,SK6
+151.224.40.62,2013-09-17 18:27:34 UTC,,53.42925,-2.128273,BlackBerry,BlackBerry Curve,SK6
+151.224.40.62,2013-09-17 18:58:01 UTC,,53.429585,-2.129502,BlackBerry,BlackBerry Curve,SK6
+151.224.40.62,2013-09-18 08:27:51 UTC,c5e90e7622ee6c4846f4a6a7d8edf6b5780299ae,0,0,Android,,n3
+151.224.40.62,2013-09-18 08:29:52 UTC,05bdacc10cf0ba4e73e96ff0f669b71a9f440ea3,0,0,Android,,n3
+151.224.40.62,2013-09-19 16:54:24 UTC,,53.42861,-2.129557,BlackBerry,BlackBerry Curve,SK6
+151.224.40.62,2013-09-19 16:54:26 UTC,,53.42861,-2.129557,BlackBerry,BlackBerry Curve,SK6
+# number of id,3
+
+c5e90e7622ee6c4846f4a6a7d8edf6b5780299ae
+05bdacc10cf0ba4e73e96ff0f669b71a9f440ea3
+# number of coord,6
+53.430023,-2.129372
+53.429276,-2.129783
+53.42925,-2.128273
+53.429585,-2.129502
+0,0
+53.42861,-2.129557
+#
+\end{verbatim}
+\end{block}
+\end{frame}
+
+\begin{frame}{Алгоритм постоения HouseHolds}
+\begin{block}{Идентификация id}
+По построению идентификация id лога с данным ip происходит по hh-инварианту. 
+
+При отсутствие в логе id вероятность id с номером i при привязке данного лога по ip к блоку Block вычисляется по следующей формуле:
+$$P(id) = \frac{pr_i(inv\_Block)}{\sum\limits_k pr_k(inv\_Block)}$$
+\end{block}
+\end{frame}
+
+\begin{frame}{Замена коэффициента корелляции}
+
+
+\begin{block}{Предобработка векторов}
+Пусть даны два вектора $\vec{v_1}$ и $\vec{v_2}$, представляющие id инварианты.
+Шаг первый - приведем данную пару к паре векторов $\vec{v_1}'$ и $\vec{v_2}'$ одинаковой длины.
+Каждый из полученных векторов нормализируем относительно вектора $(1, 1, \dots, 1)$
+\end{block}
+\end{frame}
+
+\begin{frame}{Замена коэффициента корелляции}
+\begin{block}{Алгоритм нормализации}
+Для вектора $\vec{v} = (x_1,x_2,\dots,x_n)$ найдем минимум функции 
+$$f_{(x_1,x_2,\dots,x_n)}(\alpha)= |\alpha x_1 - 1|+\dots +|\alpha x_n - 1|$$
+Минимум данной функции будет находится в одной из точек:
+$$\{\frac{1}{x_i}| 1 \leqslant i \leqslant n \cup  x_i \neq 0\}$$
+Обозначим его как $\alpha_{min}(\vec{v})$.
+\end{block}
+\end{frame}
+\begin{frame}{Замена коэффициента корелляции}
+Определим коэффициент отличия двух векторов $\vec{v_1}=(x_1,\dots,x_n)$ и $\vec{v_1}=(x_1,\dots,x_n)$ следующим образом 
+\begin{block}{Difference coefficient}
+$$\mathit{differenceCoeff}(\vec{v_1}, \vec{v_2} ) = \frac{\sum\limits_{i=1}^n |\alpha_{min}(\vec{v_1})x_i - \alpha_{min}(\vec{v_2})y_i| }{n}$$
+\end{block}
+
+Вектора с коэффициентом отличия близким к 0 - похожи.
+\end{frame}
+
+\begin{frame}{Стабилизация координат ip-блока}
+
+На вход подается список координат с временем захвата лога, на выход - результирующая координата.
+ 
+Простым естественным методом стабилизации  координат  ip-блока является взятие центра масс полученных координат.
+
+\begin{block}{Метод центра масс}
+$$v_{block} = \frac{\sum_{i=1}^n v_i}{n}$$
+\end{block}
+Преимуществом данного метода является вычислительная простота. Возращаемая методом координата является хорошим приближением к фактической координате ip-блока при условии высокого процента количества координат логов с незначительным отклонением от фактической координаты  ip-блока.
+
+
+
+
+
+\end{frame}
+
+\begin{frame}{Стабилизация координат ip-блока}
+Предыдущий метод имеет недостаточную точность, если значительный процент логов имеет неадекватные координаты со значительным отклонением от фактической координаты. В данном случае для нахождение фактической координаты возможно применение следующего принципа.
+\begin{block}{Общий принцип}
+На вход подается список координат с временем захвата лога, на выход - результирующая координата.
+ 
+Общий принцип -  исследование сходимости. Важно не общее расположение точек, а центры группировки.
+\end{block}
+\end{frame}
+\begin{frame}{Стабилизация координат ip-блока}
+Функция $f: \underset{n}{\bigotimes}(\mathbb{R}\bigotimes\mathbb{R}) \rightarrow \underset{n}{\bigotimes}(list\ of\ \mathbb{N}) $
+\begin{block}{Алгоритм (1-й шаг)}
+\begin{algorithmic}[1] 
+\STATE $\rho_{min} =\{ \min \rho (x_i, x_j) |0\leqslant i,j \leqslant n \}$ 
+\STATE $\rho_{max} = \{ \max \rho (x_i, x_j) | i,j \leqslant n \}$
+\STATE $t=0$ 
+\WHILE{ $ \rho_{max} - t*\rho_{min} > 0 $ }
+ \FOR{ ( $i = 1; i \leqslant n; i++$) }
+ \STATE $\alpha_t(x_i) = \mathbf{card}(\{ x_j| \rho (x_i, x_j) \leqslant \rho_{max} - t*\rho_{min}, 0\leqslant j \leqslant n \})$ 
+ \ENDFOR
+\STATE $t++$
+\ENDWHILE
+\end{algorithmic}
+\end{block}
+\end{frame}
+
+\begin{frame}{Стабилизация координат ip-блока}
+\begin{block}{Алгоритм (2-й шаг)}
+После первого шага агоритма с каждой точкой $x_i$ связана последовательность
+ $$\alpha(x_i) = (\alpha_1(x_i),\alpha_2(x_i),\dots,\alpha_n(x_i)). $$
+\end{block}
+\begin{block}{Алгоритм (3-й шаг)}
+Выберем из всех $\alpha(x_i)$ максимальный. Сравнение производится при использовании лексикографического порядка, вначале сравниваем последние координаты. Если максимумов несколько, выбираем самый последний по времени.
+\end{block}
+
+\end{frame}
+
+
+\end{document}
+

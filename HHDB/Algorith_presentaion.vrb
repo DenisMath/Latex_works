@@ -1,4 +1,4 @@
-\frametitle{Алгоритм постоения HouseHolds}
+\frametitle{Создание ip-блоков}
 \fontsize{6}{8pt}\selectfont
 \begin{block}{Пример генерации ip-блоков}
 \begin{verbatim}

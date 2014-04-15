@@ -1,30 +1,280 @@
-\documentclass[a4paper,11pt]{article}
+\documentclass[a4paper,12pt]{article}
 
 \usepackage[T2A]{fontenc}
 \usepackage[cp1251]{inputenc}
 \usepackage[russian,english]{babel}
+\usepackage{amsfonts}
 \usepackage{amssymb,upref}
 \usepackage{amsmath,amsthm}
 \usepackage{multicol}
 \usepackage{geometry}
 \usepackage[dvips]{graphicx}
+\usepackage{algorithmic}
 
 \setcounter{MaxMatrixCols}{10}
+
+\newtheorem{theorem}{Теорема}[subsection]
+\newtheorem{lemma}{Лемма}[subsection]
+\newtheorem{corollary}{Следствие}[subsection]
+\newtheorem{remark}{Замечание}[subsection]
+\newtheorem{definition}{Определение}[subsection]
+\newtheorem{example}{Пример}[subsection]
+\newtheorem{hyp}{Гипотеза}[subsection]
+\newtheorem{question}{Вопрос}[subsection]
 
 \begin{document}
 \thispagestyle{plain}
 
-Создание математической модели модуля Оракул.
-\section{Постановка задачи}
-Мужчина не пьет пиво - не предлагать ему пиво в контекстной рекламе.
-\section {Данные для построения}
-Нормализированная база данных логов.
-\subsection {Входные данные}
-Набор значений параметров - возраст, доход, образование и т.д.
-\subsection {Выходные данные}
-Набор IP и(или) device\_id
-\section {Параметризация модуля}
-Параметризация модуля связана с входными параметрами - возраст, доход, образование и т.д.
-\section{Плагин}
-Плагин расширения набора ip и id. На входе - набор ip и id, на выходе - расширенный набор ip и id возможно с действительным параметром. 
+
+\section*{Алгоритм постоения HouseHolds}
+Базовыми сущностями положим множество логов. Мотивация для рассмотрения именно такого базового множества, а не множества девайсов, состоит в начальной неопределенности данного множества, а, следовательно, усложнение модели формалистикой теории нечетких множеств. 
+
+Общая схема алгоритма:
+\begin{enumerate}
+\item Фильтрация  данных
+\item Сортировка данных
+\item Построение ip-блоков
+\item Построение HouseHolds
+\end{enumerate}
+
+$$\mathfrak{L}^{(1)}  \stackrel{f}{ \longrightarrow } \mathfrak{L}^{(2)}\stackrel{s}{ \longrightarrow } \mathfrak{L}^{(3)}\stackrel{i}{ \longrightarrow } \mathfrak{L}^{(4)} \stackrel{h}{ \longrightarrow } \mathfrak{L}^{(5)}$$
+
+Функция $f$ осуществляет фильтрацию данных, функция $s$ - сортировку согласно определенным работой алгоритма критериям, функция $i$ - построение ip блоков, функция $h$ - построение households.
+
+\section{Фильтрация  данных, cортировка данных}
+
+Данный запрос выполняет необходимую для работы алгоритма построения HouseHolds сортировку с частичной фильтрацией: 
+\begin{verbatim}
+
+SELECT * FROM access_log 
+           WHERE lat IS NOT NULL 
+                     AND long IS NOT NULL 
+                     AND homebiz-type != "business" 
+                     AND source = 'lls' 
+           ORDER BY ip, time
+
+\end{verbatim}
+
+В результате выполнения запроса множество логов будет разбито на базовые блоки - в один блок попадают логи с одинаковым ip, отсортированные по времени в порядке возрастания.
+\section{Построение ip-блоков}
+
+\begin{definition}
+Определим каркас $ip\_shell$ для ip-блока  как множество из двух базовых логов - начального $.begin$ и конечного $ip\_shell.end$:
+
+$$ ip\_shell.begin.time < ip\_shell.end.time  $$
+
+\end{definition}
+
+Строятся каркасы для ip-блоков. Для этого из множества логов выбираются логи с определенными координатами из доверительных источников. Полученное множество логов сортируется по ip. В полученных ip-группах данные сортируются по времени. 
+
+
+{%\fontsize{6}{8pt}\selectfont
+\begin{algorithmic}[1] 
+
+\STATE  i = 0
+%\WHILE{ (\NOT end of data) }
+\STATE \label{begin} $cin \gg line$, new  {\bf record}
+\STATE   $currentIP \gets  line.ip, blockCoord \gets  line.coord$ 
+\STATE  push to resultBase  {\bf record} with 
+
+$record.ip \gets  line.ip,$ 
+
+$record.coord \gets  line.coord, $
+
+$record.time\_begin \gets  line.time, $
+
+$record.group\_id \gets  i$
+\STATE $i++, cin \gg line$
+ \IF  { $line.ip = currentIP$}  \label{ifip}
+\IF  { $line.coord  \stackrel{ CoordAccuracy}{ \simeq } currentCoord$ } 
+\STATE goto \ref{ifip}
+\ELSE   
+\STATE goto \ref{next}
+\ENDIF 
+\STATE storage.clear()
+\ELSE  
+\STATE $record.time\_end \gets previousTime $  
+\STATE goto \ref{begin}
+\ENDIF 
+\STATE \label{next} $cin \gg line$
+\IF  { $line.time  \stackrel{ TimeAccuracy}{ \simeq } previousTime$ } 
+\STATE storage.push(line)
+
+\STATE goto \ref{ifip}
+\ELSE   
+\STATE goto \ref{next1}
+\ENDIF 
+\STATE \label{next1} do the same with storage
+%\ENDWHILE
+  
+\end{algorithmic}}
+
+Алгоритм построения ip-блоков включает в себя следующие параметры:
+\begin{itemize}
+\item CoordAccuracy
+\item TimeAccuracy
+\end{itemize}
+
+
+В результате работы алгоритма получаем множество $ip\_shells$ каркасов ip-блоков. 
+$$ip\_block$$
+
+  При построении каркасов ip-блоков алгоритм допускает распараллеливание путем одновременного вычисления каркасов ip-блоков по различным ip-группам.
+
+ Функция $block\_construct$ по каркасу ip-блока  строит непосредственно ip-блок:
+
+$$block\_construct:ip\_shells \rightarrow ip\_blocks$$
+
+\begin{verbatim}
+
+SELECT * FROM sorted_logs
+           WHERE ip = input_shell.ip
+                     AND  time  >  input_shell.begin.time - delta 
+                     AND  time <  input_shell.end.time + delta  
+           ORDER BY time
+
+\end{verbatim}
+
+\subsection{Пример генерации ip-блоков}
+{\fontsize{9}{12pt}\selectfont
+\begin{verbatim}
+# block_ip,151.224.40.62
+# number of line,10
+151.224.40.62,2013-09-16 16:53:13 UTC,,53.42925,-2.128273,BlackBerry,BlackBerry Curve,SK6
+151.224.40.62,2013-09-17 16:46:05 UTC,,53.430023,-2.129372,BlackBerry,BlackBerry Curve,SK6
+151.224.40.62,2013-09-17 16:47:47 UTC,,53.429276,-2.129783,BlackBerry,BlackBerry Curve,SK6
+151.224.40.62,2013-09-17 17:42:11 UTC,,53.42925,-2.128273,BlackBerry,BlackBerry Curve,SK6
+151.224.40.62,2013-09-17 18:27:34 UTC,,53.42925,-2.128273,BlackBerry,BlackBerry Curve,SK6
+151.224.40.62,2013-09-17 18:58:01 UTC,,53.429585,-2.129502,BlackBerry,BlackBerry Curve,SK6
+151.224.40.62,2013-09-18 08:27:51 UTC,c5e90e7622ee6c4846f4a6a7d8edf6b5780299ae,0,0,Android,,n3
+151.224.40.62,2013-09-18 08:29:52 UTC,05bdacc10cf0ba4e73e96ff0f669b71a9f440ea3,0,0,Android,,n3
+151.224.40.62,2013-09-19 16:54:24 UTC,,53.42861,-2.129557,BlackBerry,BlackBerry Curve,SK6
+151.224.40.62,2013-09-19 16:54:26 UTC,,53.42861,-2.129557,BlackBerry,BlackBerry Curve,SK6
+# number of id,3
+
+c5e90e7622ee6c4846f4a6a7d8edf6b5780299ae
+05bdacc10cf0ba4e73e96ff0f669b71a9f440ea3
+# number of coord,6
+53.430023,-2.129372
+53.429276,-2.129783
+53.42925,-2.128273
+53.429585,-2.129502
+0,0
+53.42861,-2.129557
+#
+\end{verbatim}
+}
+
+Каждому ip-блоку приписывается id-инвариант.
+
+ ip-блоки проверяются на принадлежность к одному household путем анализа id-инвариантов. При слиянии ip-блоков в households id-инварианты складываются.
+
+\subsection{id-инвариант}
+ В базовом блоке определен id-инвариант - вектор весов при соответствующих id.
+
+\begin{definition}
+ id-инвариант базового блока определен следующим образом:
+\begin{enumerate}
+  \item Пробегаемся по множеству логов - если id присутсвует в логе, увеличиваем значение соответствующей координаты инварианта на 1. Если поле id отсутствует в инварианте - добавляем его.
+  \item Если id в логе не определено - добавляем к значениям инварианта значения, полученные в результате статистического анализа полей лога, что определены.
+\end{enumerate}
+
+$$value(id) = \sum_{i=1}^{ip-block Size}\{1 | id = log_i.id \} $$
+
+\end{definition}
+
+ Для объединения 2-х блоков id-инвариант определен, как сумма id-инвариантов соответствующих блоков.
+
+ При суммировании поле с отсутствующим id добавляется со значением 0. Суммирование происходит покомпонентно, как в случае сложения векторов.
+
+\subsection{Идентификация id}
+По построению идентификация id лога с данным ip происходит по id-инварианту ip-блока, к которому данный лог принадлежит. 
+
+При отсутствие в логе id вероятность id с номером i при привязке данного лога по ip к блоку Block вычисляется по следующей формуле:
+$$P(id) = \frac{pr_i(inv\_Block)}{\sum\limits_k pr_k(inv\_Block)}$$
+
+ 
+
+
+\section{Построение HouseHolds}
+$\mathfrak{H}$ - set of households
+
+Будем исходить из предположения, что отображение $$f: time\times ip\rightarrow\mathfrak{H}$$ является инъективным.
+
+Как было сказано выше ip-блоки проверяются на принадлежность к одному household путем анализа id-инвариантов. Возможны различные интерпретации сравнения id-инвариантов для сопоставления ip-блоков различным households.
+
+Естественной проверкой является изучение пересечения множества id для двух id-инвариантов. Например к одному households можно отнести множества с общим количеством девайсов больше, чем 2:
+$$ip\_block_1, ip\_block_2 \in household \Leftrightarrow |id\_inv(ip\_block_1)\cap id\_inv(ip\_block_1) |>2 $$
+
+Более сложный критерий базируется на изучении линейной зависимости id-инвариантов.
+
+\subsection{Принадлежность ip-блоков к одному household}
+На множестве пар ip блоков введем коэффициент связи принадлежности к одному household.
+
+
+Пусть даны два вектора $\vec{v_1}$ и $\vec{v_2}$, представляющие id инварианты.
+
+Шаг первый - приведем данную пару к паре векторов $\vec{v_1}'$ и $\vec{v_2}'$ одинаковой длины.
+Каждый из полученных векторов нормализируем относительно вектора $(1, 1, \dots, 1)$
+
+\subsection{Алгоритм нормализации id-инварианта}
+Для вектора $\vec{v} = (x_1,x_2,\dots,x_n)$ найдем минимум функции 
+$$f_{(x_1,x_2,\dots,x_n)}(\alpha)= |\alpha x_1 - 1|+\dots +|\alpha x_n - 1|$$
+Минимум данной функции будет находится в одной из точек:
+$$\{\frac{1}{x_i}| 1 \leqslant i \leqslant n \cup  x_i \neq 0\}$$
+Обозначим его как $\alpha_{min}(\vec{v})$.
+
+Определим коэффициент отличия двух векторов $\vec{v_1}=(x_1,\dots,x_n)$ и $\vec{v_1}=(x_1,\dots,x_n)$ следующим образом: 
+
+$$\mathit{differenceCoeff}(\vec{v_1}, \vec{v_2} ) = \frac{\sum\limits_{i=1}^n |\alpha_{min}(\vec{v_1})x_i - \alpha_{min}(\vec{v_2})y_i| }{n}$$
+
+
+Вектора с коэффициентом отличия близким к 0 - похожи.
+
+
+
+\subsection{Стабилизация координат}
+
+ Поскольку анализ данных показывает недостоверность части координат, полученных в логах, вычисление предположительной координаты, соответствующей ip-блоку, происходит при помощи статистических методов. 
+
+Методы, вычисляющие достоверную координату для ip-блока имеют следующую спецификацию: на вход подается список координат с временем захвата лога, на выход - результирующая координата.
+ 
+Простым естественным методом стабилизации  координат  ip-блока является взятие центра масс полученных координат.
+
+
+$$v_{block} = \frac{\sum_{i=1}^n v_i}{n}$$
+
+Преимуществом данного метода является вычислительная простота. Возращаемая методом координата является хорошим приближением к фактической координате ip-блока при условии высокого процента количества координат логов с незначительным отклонением от фактической координаты  ip-блока.
+
+
+
+Предыдущий метод имеет недостаточную точность, если значительный процент логов имеет неадекватные координаты со значительным отклонением от фактической координаты. В данном случае для нахождение фактической координаты возможно применение следующего принципа.
+
+Общий принцип -  исследование сходимости. Важно не общее расположение точек, а центры группировки.
+
+Функция $f: \underset{n}{\bigotimes}(\mathbb{R}\bigotimes\mathbb{R}) \rightarrow \underset{n}{\bigotimes}(list\ of\ \mathbb{N}) $
+
+\begin{algorithmic}[1] 
+\STATE $\rho_{min} =\{ \min \rho (x_i, x_j) |0\leqslant i,j \leqslant n \}$ 
+\STATE $\rho_{max} = \{ \max \rho (x_i, x_j) | i,j \leqslant n \}$
+\STATE $t=0$ 
+\WHILE{ $ \rho_{max} - t*\rho_{min} > 0 $ }
+ \FOR{ ( $i = 1; i \leqslant n; i++$) }
+ \STATE $\alpha_t(x_i) = \mathbf{card}(\{ x_j| \rho (x_i, x_j) \leqslant \rho_{max} - t*\rho_{min}, 0\leqslant j \leqslant n \})$ 
+ \ENDFOR
+\STATE $t++$
+\ENDWHILE
+\end{algorithmic}
+
+
+После первого шага агоритма с каждой точкой $x_i$ связана последовательность
+ $$\alpha(x_i) = (\alpha_1(x_i),\alpha_2(x_i),\dots,\alpha_n(x_i)). $$
+
+Выберем из всех $\alpha(x_i)$ максимальный. Сравнение производится в лексикографическом порядке, вначале сравниваем последние координаты. Если максимумов несколько, выбираем самый последний по времени. Алгоритм возвращает координату $x_i$, для которой $\alpha(x_i)$ является максимальным.
+
+ К каждому логу ip-блока методом коллаборативной фильтрации привяжем координаты:
+$$log.coord = ip\_block.coord $$
+
+Распараллеливание на этапе построения households из ip-блоков состоит в разбиение сравниваемого множества логов на подмножества. Проверка конгруэнтности id-инвариантов в подможествах является независимой, и поэтому может выполнятся одновременно.
+
 \end{document}
