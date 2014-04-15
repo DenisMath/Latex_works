@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9) (preloaded format=pdflatex 2013.5.18)  15 APR 2014 15:56
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9) (preloaded format=pdflatex 2013.5.18)  15 APR 2014 16:12
 entering extended mode
 **\input MathModel.tex
 (d:\GitHub\Latex_works\MathModel.tex
@@ -332,31 +332,31 @@ Overfull \hbox (15.2808pt too wide) in paragraph at lines 30--31
 оит в начальной
  []
 
-LaTeX Font Info:    Try loading font information for U+msa on input line 40.
+LaTeX Font Info:    Try loading font information for U+msa on input line 35.
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsfonts\umsa.fd"
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 40.
+LaTeX Font Info:    Try loading font information for U+msb on input line 35.
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsfonts\umsb.fd"
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Try loading font information for U+euf on input line 40.
+LaTeX Font Info:    Try loading font information for U+euf on input line 55.
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsfonts\ueuf.fd"
 File: ueuf.fd 2013/01/14 v3.01 Euler Fraktur
 )
-Overfull \hbox (0.75488pt too wide) in paragraph at lines 42--43
+Overfull \hbox (0.75488pt too wide) in paragraph at lines 57--58
 \T2A/cmr/m/n/12 согласно определенным работой алгоритма критериям, функция $\OM
 L/cmm/m/it/12 i$ \T2A/cmr/m/n/12 - построение
  []
 
-LaTeX Font Info:    Try loading font information for T2A+cmtt on input line 47.
+LaTeX Font Info:    Try loading font information for T2A+cmtt on input line 62.
 
 (C:\Users\1\AppData\Roaming\MiKTeX\2.9\tex\latex\cyrillic\t2acmtt.fd
 File: t2acmtt.fd 2001/08/11 v1.0a Computer Modern Cyrillic font definitions
 )
-Overfull \hbox (6.2754pt too wide) in paragraph at lines 58--59
+Overfull \hbox (6.2754pt too wide) in paragraph at lines 73--74
 [][]\T2A/cmr/m/n/12 В результате выполнения запроса множество логов будет разби
 то на базовые
  []
@@ -364,225 +364,224 @@ Overfull \hbox (6.2754pt too wide) in paragraph at lines 58--59
 [1
 
 {C:/Users/1/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}]
-Overfull \hbox (5.67632pt too wide) in paragraph at lines 68--69
+Overfull \hbox (5.67632pt too wide) in paragraph at lines 83--84
 [][]\T2A/cmr/m/n/12 Строятся каркасы для ip-блоков. Для этого из множества лого
 в выбираются
  []
 
 
-Overfull \hbox (11.38268pt too wide) in paragraph at lines 68--69
+Overfull \hbox (11.38268pt too wide) in paragraph at lines 83--84
 \T2A/cmr/m/n/12 логи с определенными координатами из доверительных источников. 
 Полученное
  []
 
 
-Overfull \hbox (21.98839pt too wide) in paragraph at lines 68--69
+Overfull \hbox (21.98839pt too wide) in paragraph at lines 83--84
 \T2A/cmr/m/n/12 множество логов сортируется по ip. В полученных ip-группах данн
 ые сортируются
  []
 
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 114.
-
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 87.
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\omscmr.fd"
 File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 114.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 87.
  [2]
-Overfull \hbox (2.68518pt too wide) in paragraph at lines 122--123
+Overfull \hbox (2.68518pt too wide) in paragraph at lines 135--136
 [][]\T2A/cmr/m/n/12 При построении каркасов ip-блоков алгоритм допускает распар
 аллеливание
  []
 
 
-Overfull \hbox (12.31134pt too wide) in paragraph at lines 122--123
+Overfull \hbox (12.31134pt too wide) in paragraph at lines 135--136
 \T2A/cmr/m/n/12 путем одновременного вычисления каркасов ip-блоков по различным
  ip-группам. 
  []
 
 
-Overfull \hbox (2.16866pt too wide) in paragraph at lines 165--165
+Overfull \hbox (2.16866pt too wide) in paragraph at lines 178--178
 []\T2A/cmtt/m/n/9 151.224.40.62,2013-09-16 16:53:13 UTC,,53.42925,-2.128273,Bla
 ckBerry,BlackBerry Curve,SK6[] 
  []
 
 
-Overfull \hbox (6.8925pt too wide) in paragraph at lines 165--165
+Overfull \hbox (6.8925pt too wide) in paragraph at lines 178--178
 []\T2A/cmtt/m/n/9 151.224.40.62,2013-09-17 16:46:05 UTC,,53.430023,-2.129372,Bl
 ackBerry,BlackBerry Curve,SK6[] 
  []
 
 
-Overfull \hbox (6.8925pt too wide) in paragraph at lines 165--165
+Overfull \hbox (6.8925pt too wide) in paragraph at lines 178--178
 []\T2A/cmtt/m/n/9 151.224.40.62,2013-09-17 16:47:47 UTC,,53.429276,-2.129783,Bl
 ackBerry,BlackBerry Curve,SK6[] 
  []
 
 
-Overfull \hbox (2.16866pt too wide) in paragraph at lines 165--165
+Overfull \hbox (2.16866pt too wide) in paragraph at lines 178--178
 []\T2A/cmtt/m/n/9 151.224.40.62,2013-09-17 17:42:11 UTC,,53.42925,-2.128273,Bla
 ckBerry,BlackBerry Curve,SK6[] 
  []
 
 
-Overfull \hbox (2.16866pt too wide) in paragraph at lines 165--165
+Overfull \hbox (2.16866pt too wide) in paragraph at lines 178--178
 []\T2A/cmtt/m/n/9 151.224.40.62,2013-09-17 18:27:34 UTC,,53.42925,-2.128273,Bla
 ckBerry,BlackBerry Curve,SK6[] 
  []
 
 
-Overfull \hbox (6.8925pt too wide) in paragraph at lines 165--165
+Overfull \hbox (6.8925pt too wide) in paragraph at lines 178--178
 []\T2A/cmtt/m/n/9 151.224.40.62,2013-09-17 18:58:01 UTC,,53.429585,-2.129502,Bl
 ackBerry,BlackBerry Curve,SK6[] 
  []
 
 
-Overfull \hbox (25.78789pt too wide) in paragraph at lines 165--165
+Overfull \hbox (25.78789pt too wide) in paragraph at lines 178--178
 []\T2A/cmtt/m/n/9 151.224.40.62,2013-09-18 08:27:51 UTC,c5e90e7622ee6c4846f4a6a
 7d8edf6b5780299ae,0,0,Android,,n3[] 
  []
 
 
-Overfull \hbox (25.78789pt too wide) in paragraph at lines 165--165
+Overfull \hbox (25.78789pt too wide) in paragraph at lines 178--178
 []\T2A/cmtt/m/n/9 151.224.40.62,2013-09-18 08:29:52 UTC,05bdacc10cf0ba4e73e96ff
 0f669b71a9f440ea3,0,0,Android,,n3[] 
  []
 
 
-Overfull \hbox (2.16866pt too wide) in paragraph at lines 165--165
+Overfull \hbox (2.16866pt too wide) in paragraph at lines 178--178
 []\T2A/cmtt/m/n/9 151.224.40.62,2013-09-19 16:54:24 UTC,,53.42861,-2.129557,Bla
 ckBerry,BlackBerry Curve,SK6[] 
  []
 
 
-Overfull \hbox (2.16866pt too wide) in paragraph at lines 165--165
+Overfull \hbox (2.16866pt too wide) in paragraph at lines 178--178
 []\T2A/cmtt/m/n/9 151.224.40.62,2013-09-19 16:54:26 UTC,,53.42861,-2.129557,Bla
 ckBerry,BlackBerry Curve,SK6[] 
  []
 
 [3]
-Overfull \hbox (5.69144pt too wide) in paragraph at lines 170--171
+Overfull \hbox (5.69144pt too wide) in paragraph at lines 183--184
 [][]\T2A/cmr/m/n/12 ip-блоки проверяются на принадлежность к одному house-hold 
 путем анализа
  []
 
 
-Overfull \hbox (23.2602pt too wide) in paragraph at lines 170--171
+Overfull \hbox (23.2602pt too wide) in paragraph at lines 183--184
 \T2A/cmr/m/n/12 id-инвариантов. При слиянии ip-блоков в house-holds id-инвариан
 ты складываются. 
  []
 
 
-Overfull \hbox (19.1781pt too wide) in paragraph at lines 176--177
+Overfull \hbox (19.1781pt too wide) in paragraph at lines 189--190
 \T2A/cmr/bx/n/12 Определение 2.2.1. []\T2A/cmr/m/it/12 id-инвариант базового бл
 ока определен следующим образом: 
  []
 
 
-Overfull \hbox (21.26308pt too wide) in paragraph at lines 178--179
+Overfull \hbox (21.26308pt too wide) in paragraph at lines 191--192
 [][]\T2A/cmr/m/it/12 Пробегаемся по множеству логов - если id присутсвует в лог
 е, увеличиваем
  []
 
 
-Overfull \hbox (15.49338pt too wide) in paragraph at lines 179--180
+Overfull \hbox (15.49338pt too wide) in paragraph at lines 192--193
 [][]\T2A/cmr/m/it/12 Если id в логе не определено - добавляем к значениям инвар
 ианта значения,
  []
 
 
-Overfull \hbox (23.50377pt too wide) in paragraph at lines 186--187
+Overfull \hbox (23.50377pt too wide) in paragraph at lines 199--200
 [][]\T2A/cmr/m/n/12 Для объединения 2-х блоков id-инвариант определен, как сумм
 а id-инвариантов
  []
 
 
-Overfull \hbox (9.04408pt too wide) in paragraph at lines 191--192
+Overfull \hbox (9.04408pt too wide) in paragraph at lines 204--205
 []\T2A/cmr/m/n/12 По построению идентификация id лога с данным ip происходит по
  id-инварианту
  []
 
 [4]
-Overfull \hbox (1.38pt too wide) in paragraph at lines 204--205
+Overfull \hbox (1.38pt too wide) in paragraph at lines 217--218
 [][]\T2A/cmr/m/n/12 Как было сказано выше ip-блоки проверяются на принадлежност
 ь к одному
  []
 
 
-Overfull \hbox (4.43433pt too wide) in paragraph at lines 204--205
+Overfull \hbox (4.43433pt too wide) in paragraph at lines 217--218
 \T2A/cmr/m/n/12 house-hold путем анализа id-инвариантов. Возможны различные инт
 ерпретации
  []
 
 
-Overfull \hbox (3.3554pt too wide) in paragraph at lines 206--207
+Overfull \hbox (3.3554pt too wide) in paragraph at lines 219--220
 \T2A/cmr/m/n/12 двух id-инвариантов. Например к одному house-holds можно отнест
 и множества
  []
 
 
-Overfull \hbox (6.81432pt too wide) in paragraph at lines 217--219
+Overfull \hbox (6.81432pt too wide) in paragraph at lines 230--232
 \T2A/cmr/m/n/12 длины. Каждый из полученных векторов нормализируем относительно
  вектора
  []
 
 [5]
-Overfull \hbox (35.89929pt too wide) in paragraph at lines 238--239
+Overfull \hbox (35.89929pt too wide) in paragraph at lines 251--252
 []\T2A/cmr/m/n/12 Поскольку анализ данных показывает недостоверность части коор
 динат, полученных
  []
 
 
-Overfull \hbox (30.02992pt too wide) in paragraph at lines 240--241
+Overfull \hbox (30.02992pt too wide) in paragraph at lines 253--254
 [][]\T2A/cmr/m/n/12 Методы, вычисляющие достоверную координату для ip-блока име
 ют следующую
  []
 
 
-Overfull \hbox (1.54314pt too wide) in paragraph at lines 242--243
+Overfull \hbox (1.54314pt too wide) in paragraph at lines 255--256
 [][]\T2A/cmr/m/n/12 Простым естественным методом стабилизации координат ip-блок
 а является
  []
 
 
-Overfull \hbox (41.73146pt too wide) in paragraph at lines 247--248
+Overfull \hbox (41.73146pt too wide) in paragraph at lines 260--261
 [][]\T2A/cmr/m/n/12 Преимуществом данного метода является вычислительная просто
 та. Возращаемая
  []
 
 
-Overfull \hbox (17.20612pt too wide) in paragraph at lines 247--248
+Overfull \hbox (17.20612pt too wide) in paragraph at lines 260--261
 \T2A/cmr/m/n/12 методом координата является хорошим приближением к фактической 
 координате
  []
 
 
-Overfull \hbox (46.737pt too wide) in paragraph at lines 247--248
+Overfull \hbox (46.737pt too wide) in paragraph at lines 260--261
 \T2A/cmr/m/n/12 ip-блока при условии высокого процента количества координат лог
 ов с незначительным
  []
 
 
-Overfull \hbox (11.94041pt too wide) in paragraph at lines 270--271
+Overfull \hbox (11.94041pt too wide) in paragraph at lines 283--284
 [][]\T2A/cmr/m/n/12 После первого шага агоритма с каждой точкой $\OML/cmm/m/it/
 12 x[]$ \T2A/cmr/m/n/12 связана последовательность 
  []
 
 [6]
-Overfull \hbox (60.33759pt too wide) in paragraph at lines 273--274
+Overfull \hbox (60.33759pt too wide) in paragraph at lines 286--287
 [][]\T2A/cmr/m/n/12 Выберем из всех $\OML/cmm/m/it/12 \OT1/cmr/m/n/12 (\OML/cm
 m/m/it/12 x[]\OT1/cmr/m/n/12 )$ \T2A/cmr/m/n/12 максимальный. Сравнение произво
 дится в лексикографическом
  []
 
 
-Overfull \hbox (21.76137pt too wide) in paragraph at lines 273--274
+Overfull \hbox (21.76137pt too wide) in paragraph at lines 286--287
 \T2A/cmr/m/n/12 порядке, вначале сравниваем последние координаты. Если максимум
 ов несколько,
  []
 
 
-Overfull \hbox (15.50912pt too wide) in paragraph at lines 278--279
+Overfull \hbox (15.50912pt too wide) in paragraph at lines 291--292
 \T2A/cmr/m/n/12 конгруэнтности id-инвариантов в подможествах является независим
 ой, и поэтому
  []
@@ -591,11 +590,11 @@ Overfull \hbox (15.50912pt too wide) in paragraph at lines 278--279
 Here is how much of TeX's memory you used:
  3277 strings out of 493921
  40830 string characters out of 3144888
- 103794 words of memory out of 3000000
+ 102794 words of memory out of 3000000
  6495 multiletter control sequences out of 15000+200000
  22283 words of font info for 56 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
- 27i,7n,24p,523b,419s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 27i,8n,24p,523b,421s stack positions out of 5000i,500n,10000p,200000b,50000s
  <C:\Users\1\AppData\Local\MiKTeX\2.
 9\fonts\pk\ljfour\lh\lh-t2a\dpi600\latt0900.pk> <C:\Users\1\AppData\Local\MiKTe
 X\2.9\fonts\pk\ljfour\lh\lh-t2a\dpi600\labx1440.pk> <C:\Users\1\AppData\Local\M
@@ -619,9 +618,9 @@ KTeX 2.9/fonts/type1/public/amsfonts/cm/cmti12.pfb><C:/Program Files (x86)/MiKT
 eX 2.9/fonts/type1/public/amsfonts/euler/eufm10.pfb><C:/Program Files (x86)/MiK
 TeX 2.9/fonts/type1/public/amsfonts/symbols/msam10.pfb><C:/Program Files (x86)/
 MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on MathModel.pdf (7 pages, 254753 bytes).
+Output written on MathModel.pdf (7 pages, 256864 bytes).
 PDF statistics:
- 445 PDF objects out of 1000 (max. 8388607)
+ 449 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
